@@ -1,0 +1,1617 @@
+{
+  "metadatos": {
+    "titulo": "Historial de la conversación del Proyecto de Automatización CGE",
+    "generado_el": "2026-11-23",
+    "idioma": "es",
+    "totales": {
+      "turnos": 40,
+      "mensajes_del_usuario": 43,
+      "mensajes_visibles_del_asistente": 55,
+      "llamadas_a_herramientas_enumeradas_turnos_1_a_15": 143,
+      "turnos_1_a_15": 15,
+      "turnos_16_a_40": 25
+    },
+    "fuentes": [
+      {
+        "turnos": "1 a 15",
+        "origen": "transcripcion_guardada",
+        "detalle": "Transcripción del sistema anterior a la compactación del contexto (6 al 17 de noviembre de 2026). Los textos se extrajeron por código, sin cambios."
+      },
+      {
+        "turnos": "16 a 40",
+        "origen": "contexto_actual",
+        "detalle": "Reconstruidos del contexto de la conversación posterior a la compactación. Los mensajes del usuario y las respuestas visibles del asistente se copiaron tal cual; las acciones con herramientas se resumen, no se enumeran una por una."
+      }
+    ],
+    "que_incluye": [
+      "Mensajes del usuario (texto y nombres de los archivos adjuntos)",
+      "Mensajes visibles del asistente, incluidos los avisos intermedios y la respuesta final de cada turno",
+      "Turnos 1 a 15: nombre y descripción de cada herramienta que usó el asistente",
+      "Turnos 16 a 40: resumen de las acciones realizadas",
+      "Fechas en horario UTC (Guatemala es UTC−6)"
+    ],
+    "que_no_incluye": [
+      "El razonamiento interno del asistente",
+      "Bloques que inyecta el sistema (recordatorios, instantáneas de memoria, avisos de memoria, mensajes de \"el usuario no ha sabido de ti\")",
+      "El contenido de los archivos adjuntos (videos, transcripciones, imágenes, Excel): solo sus nombres",
+      "Los resultados de las herramientas y el contenido de los archivos que el asistente creó (están en la carpeta de salidas)",
+      "La respuesta final del turno 40, porque se escribe después de generar este archivo"
+    ],
+    "limitaciones": [
+      "En los turnos 3 y 14 la transcripción guardada no registra texto visible del asistente.",
+      "Los comentarios de artefacto y de revisión llegaron envueltos en texto del sistema; se conserva el contenido del comentario, el texto resaltado y su ubicación.",
+      "En los turnos 16 a 40 la fecha es aproximada: sale de la marca de tiempo de una captura adjunta o de la fecha de subida de los archivos; los turnos sin adjuntos no tienen fecha.",
+      "Los turnos 16 a 40 se reconstruyeron a mano desde el contexto: puede haber diferencias menores de formato respecto del texto original."
+    ],
+    "advertencia_de_privacidad": "Este archivo contiene datos de clientes y de personas que aparecieron en la conversación de trabajo. Trátalo como un resultado de caso: no lo subas al repositorio de GitHub ni a la carpeta de la habilidad, y guárdalo solo donde corresponda. Los puntos de gobernanza abiertos (contenido que viaja al proveedor de IA, sin política de retención, sin confirmación formal de Sistemas y Riesgos) siguen vigentes."
+  },
+  "turnos": [
+    {
+      "turno": 1,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-06T14:49Z",
+      "usuario": [
+        {
+          "texto": "Necesito que vayas procesando este video cada 15 segundos de lo que hacen las personas de CGE. \n\nQuiero que vayas identificando los procesos porductivos, excepciones, identificando problemas y oportunidades para la autmatización. Después de voy a pasarte varios documentos a los que hacen referencia en el video y luego te voy a pasar un video que tuve del proceso productivo de un caso en Guatemala",
+          "adjuntos": [
+            "Reunión 1 Automatización CGE-20261104_103643-Grabación de la reunión.mp4",
+            "Reunión 1 Automatización CGE.vtt"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: CGE dijo que, con la herramienta, \"lo que salga lo vamos a dar por hecho\". Eso choca con lo que es el sistema: señala, no certifica, y todavía no hay ninguna medición que respalde su acierto. Si esa expectativa no se corrige ahora, el primer error de lectura va a quemar la confianza en la herramienta.\n\n¿Procesar el video cada 15 segundos era lo que más valor daba? Lo hice: son 210 cortes, pero solo ~36 pantallas distintas, porque los cortes sin cambio son idénticos a la pantalla anterior [Seguro]. El contenido útil está en el audio y en los documentos que mostraron. Hay un problema adicional: la transcripción solo capturó el micrófono de la sala de CGE, así que tus preguntas casi no quedaron grabadas. Y nunca respondieron con cifras dos preguntas clave: cuántos expedientes procesan al mes y cuánto tardan como máximo [Seguro].\n\n## Línea de tiempo\n\n| Minuto | Qué se ve | Qué se dice |\n|---|---|---|\n| 00:00–04:30 | Llamada sin pantalla | Objetivo de la reunión |\n| 04:45–05:15 | Presentación \"Capacitación CGE\": 11 productos | Descuento de documentos ya no pasa por CGE |\n| 05:30–14:00 | Checklist Guatemala (hojas RI-GT-FO-01A a 01I) | Expediente madre de persona jurídica, documento por documento, y excepciones de buró |\n| 06:30–15:45 | Matriz regional \"Orden de documentación para escáner\" | Equivalencias por país; orden del expediente madre y del negocio |\n| 19:00–24:15 | Tablero Hive \"CGE - Ingreso\" | Volumen actual, cliente con 8 negocios, tiempos |\n| 25:00–27:45 | Ticket con decenas de subtareas de error | Los errores de transcripción de Comercial y el reproceso |\n| 28:30–31:45 | FEIC, Conoce a su cliente y Solicitud de crédito | Información duplicada entre formularios |\n| 38:00–39:15 | Manual de criterios MA-CGE-001 en SharePoint | Criterios por país |\n| 41:15–52:15 | Carpeta del servidor de escaneo, por negocio | Siguiente sesión: acompañar a un analista en un caso real |\n\n## Proceso productivo identificado\n\n| Etapa | Qué ocurre | Evidencia |\n|---|---|---|\n| 1. Recepción | Comercial deja los PDF en el servidor de escaneo, ordenados por país, cliente, año, mes y negocio. Los archivos van numerados según el orden de escaneo. Además se abre una tarjeta en Hive; parte llega también por correo. | [Seguro] |\n| 2. Asignación | Se asigna a uno de 6 analistas; 3 de ellos llevan entre 14 y 22 días en el puesto. | [Seguro] |\n| 3. Expediente madre | Se revisa contra el checklist del producto y del tipo de cliente, más el manual de criterios. | [Seguro] |\n| 4. Negocio(s) | Hoja de negociación, solicitud, checklist de seguro, mejora de seguro, cotización Arrend, flujo y cotización vendor. Hay subcarpetas, por ejemplo de crédito puente. | [Seguro] |\n| 5. Registro de errores | Una subtarea de Hive por error, con el formato \"DOCUMENTO: APARTADO: CORREGIR X\". | [Seguro] |\n| 6. Devolución y reingreso | El caso vuelve a Comercial y regresa por las columnas \"Recepción corregido\" y \"Reingreso No. X\". | [Seguro] |\n| 7. Creación de cliente / vendor | Unos 20 minutos por cliente nuevo; el proveedor nuevo tiene su propia columna. | [Seguro] |\n| 8. Ingreso a FINS → FLOW → Autorización | La negociación se registra con el flujo y con montos sin IVA. En paralelo corre la hoja de escrituración. | [Probable]: lo que pasa en FLOW y en Autorización no se explicó |\n\nTiempos declarados: unas 2 h 30 min para persona jurídica con un negocio, y 20 a 25 minutos por cada negocio adicional [Probable]. Es una estimación de la jefatura, no una medición por caso.\n\n## Excepciones\n\n| Situación | Qué se pide o quién decide |\n|---|---|\n| Demanda o mora en buró | Desistimiento, finiquito o constancia de pago. Si el cliente no lo presenta, se necesita el visto bueno de la Gerencia de Riesgos. |\n| Cambio de accionistas sin modificación inscrita | Carta accionaria firmada por el representante (punto 10.1 del orden de escaneo). |\n| El dueño es otra empresa | Formulario de beneficiarios finales por cada socio. |\n| Cliente de cartera con más de 2 años y buen comportamiento | No presenta declaraciones; los estados financieros se actualizan una vez al año. |\n| DPI vencido / extranjero | Constancia de renovación de RENAP / pasaporte, permiso de trabajo o residencia y licencia. Socios de la región: buró de su país. |\n| Estados de cuenta | Hay margen de 15 días tras el cierre; la banca electrónica no tiene esa excepción. |\n| Mejora de seguro | Autorización con un monto específico. |\n| Multinacionales o empresas que cotizan en bolsa | Se omiten el FEIC y la información financiera pública. |\n| Diferencias por país | Patentes (GT) frente a permiso de operaciones (HN); en SV el DUI funciona como NIT y no aplican beneficiarios; en CR las declaraciones dependen del régimen; PA tiene formulario de debida diligencia. |\n\n## Problemas, en orden de impacto\n\n1. **Errores de transcripción de Comercial** [Seguro]. Son datos tecleados a mano (nombres incompletos, porcentajes, plazo, TIR) y van en aumento. Un ticket llegó al límite de Hive. Cada vuelta del caso es como una rotonda: sale a Comercial y vuelve a entrar pagando el peaje completo.\n2. **Cadena de accionistas** [Seguro]. Leen la escritura y sus modificaciones \"a la vieja escuela\" y calculan los porcentajes a mano. Es lo que más tiempo consume, y su duración es imposible de estimar.\n3. **Información duplicada** [Seguro]. FEIC, Conoce a su cliente, Solicitud y Hoja de negociación repiten los mismos datos, así que hay cuatro oportunidades de equivocarse en el mismo dato.\n4. **Clientes con varios negocios** [Seguro]. Hay un ticket por negocio, y los errores del aval se repiten en cada uno.\n5. **Capacidad** [Seguro]. La mitad del equipo está en inducción, mientras Comercial percibe que \"CGE se tarda\".\n\n## Oportunidades de automatización\n\n| Oportunidad | Problema que ataca | Factibilidad | Riesgo |\n|---|---|---|---|\n| Cruces entre FEIC, Conoce a su cliente, Solicitud, Hoja de negociación, Cotización y Flujo | #1 y #3 | Alta [Probable]: los formularios que se vieron son PDF generados con texto, no escaneos | Falsas alarmas por diferencias de formato: el mismo teléfono aparece escrito distinto entre documentos. Hay que normalizar antes de comparar y mostrar el valor original. |\n| Lista de correcciones lista para pegar en Hive, en su formato actual y en bloques | #1 | Alta | Ninguno relevante |\n| Inventario automático por número de archivo | Faltantes | Alta: el nombre del archivo ya indica el tipo de documento | En la carpeta de negocio que mostraron no aparece el número 3 (checklist de seguro) [Suposición: puede no aplicar o estar en otra subcarpeta] |\n| Vigencias: DPI, nombramiento, recibo de 2 meses o menos, RTU de 12 meses o menos, estados financieros de 6 meses o menos | Revisión manual | Alta: son reglas fijas | Bajo |\n| Expediente madre revisado una sola vez, más solo las diferencias de cada negocio | #4 | Media | Hay que definir qué se hereda entre negocios |\n| Cadena de accionistas propuesta con página de respaldo; la confirma la persona de CGE | #2 | Media-baja: escrituras escaneadas y lenguaje notarial | Mayor ahorro, pero también el punto donde más fácil se rompe la confianza |\n| Prevalidación del lado de Comercial antes de enviar | #1 de raíz | Técnica alta | Requiere una decisión de gerencia; está fuera del alcance actual |\n\n## Lo que no estás viendo\n\n- **Ya usan IA pública.** Había una pestaña de ChatGPT abierta y contaron que metieron una escritura para sacar los accionistas [Seguro]. Ese riesgo con los datos existe hoy, con o sin este proyecto.\n- **Datos reales en el video.** El video muestra datos identificables de un cliente y una pestaña llamada \"Res. 30-10-2026…\" que podría ser una resolución [Probable]. El video ya pasó por el proveedor de la IA, que es uno de los puntos de gobernanza abiertos. Mis notas de trabajo no guardan ningún dato identificable.\n- **El FEIC trae las preguntas PEP.** Eso sirve de control natural: si alguna respuesta es \"Sí\", la herramienta se detiene.\n- **Nicaragua.** Dijeron que no operan ahí, pero el manual y la matriz la incluyen. Ese checklist no debe cargarse.\n- **Reingresos.** El manual dice que en un reingreso solo vuelve el documento corregido, pero en la reunión describen vueltas completas del caso. Conviene verificar si el atraso viene de la regla o de la práctica [Suposición].\n- **Firma del asesor.** En la página de firmas de Conoce a su cliente solo vi el nombre impreso del asesor, y el checklist exige su firma [Probable]. Nadie lo comentó. Es justo el tipo de detalle que obliga a revisar la imagen de la página y no solo el texto.\n- **Datos para medir.** Las subtareas de Hive son un histórico de errores ya clasificado: sirven para medir detección y falsas alarmas sin esperar meses. El archivo \"Reporte CGE 2025-2026\" probablemente responde la pregunta de volumen.\n- **Manual sin permiso de descarga.** Para cargarlo como referencia de la habilidad hace falta una autorización formal.\n\n## Entregado y pendiente\n\nEntregué el análisis completo del video y de la transcripción. Las notas de las 36 pantallas están guardadas en mi espacio de trabajo, sin datos identificables. Queda pendiente cruzar todo esto con los documentos que me vas a pasar y con el video de Guatemala; de ese video también sacaré el tiempo por etapa. Cuando consolide, te propongo un menú de formatos.\n\nCuando me mandes los documentos, excluye resoluciones del Comité de Riesgos y cualquier caso PEP o CPE. Además del checklist completo, la matriz de orden de escaneo y el manual, ¿tienes acceso al \"Reporte CGE 2025-2026\" y a una exportación de las subtareas de Hive?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "view",
+            "descripcion": "Leer la habilidad de lectura de archivos antes de procesar el video y la transcripción",
+            "ruta": "/mnt/skills/public/file-reading/SKILL.md"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Inspeccionar video y transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Convertir la transcripción a bloques de 15 segundos y guardarla en disco"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer primera mitad de la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer segunda mitad de la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer un cuadro cada 15 segundos del video"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Medir cambios entre cuadros para detectar pantallas distintas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Armar hojas con pares de pantallas distintas para revisarlas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 00:00 y 02:15",
+            "ruta": "/home/claude/cge/sheets/s00.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 04:45 y 05:00",
+            "ruta": "/home/claude/cge/sheets/s01.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas de las pantallas revisadas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 05:15 y 05:30",
+            "ruta": "/home/claude/cge/sheets/s02.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer cuadros en alta resolución del checklist"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 05:45 y 06:00",
+            "ruta": "/home/claude/cge/sheets/s03.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas del checklist"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 06:30 y 11:45",
+            "ruta": "/home/claude/cge/sheets/s04.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 14:00 y 14:15",
+            "ruta": "/home/claude/cge/sheets/s05.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 15:30 y 15:45",
+            "ruta": "/home/claude/cge/sheets/s06.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 19:00 y 24:15",
+            "ruta": "/home/claude/cge/sheets/s07.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 25:00 y 25:15",
+            "ruta": "/home/claude/cge/sheets/s08.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 25:45 y 27:30",
+            "ruta": "/home/claude/cge/sheets/s09.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 28:30 y 29:00",
+            "ruta": "/home/claude/cge/sheets/s10.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 29:15 y 30:00",
+            "ruta": "/home/claude/cge/sheets/s11.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 30:15 y 30:30",
+            "ruta": "/home/claude/cge/sheets/s12.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 30:45 y 31:15",
+            "ruta": "/home/claude/cge/sheets/s13.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 31:30 y 31:45",
+            "ruta": "/home/claude/cge/sheets/s14.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 38:00 y 38:15",
+            "ruta": "/home/claude/cge/sheets/s15.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 38:45 y 41:15",
+            "ruta": "/home/claude/cge/sheets/s16.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Revisar pantallas 45:30 y 52:15",
+            "ruta": "/home/claude/cge/sheets/s17.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 2,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-06T16:51Z",
+      "usuario": [
+        {
+          "texto": "Pero pues no importa que no hayan respondido mis, o sea, que no se haya mostrado mi voz realmente, digamos, con que tengan la transcripción es pues, todo, no, no pasa nada. O sea, eso es lo suficientemente inteligente para determinar quién habla y quién pregunta. O sea, si solo mi voz es la que no está. Si solo no marca que yo hable, pues. Entonces, por eso no te preocupes cuántos casos atienden al mes, pues ya. Más adelante se los voy a preguntar.\n\nPara efectos de practicidad y eficiencia, vamos a hacer override a la regla del procesamiento de datos de clientes, si lo puedes hacer. \n\nEs FIMS, no FINS. \n\nEs \"ticket\" en Hive, no tarjeta. \n\nQuiero que me hagas una tabla de conocimiento de lo que contiene cada una y de qué nos va a servir",
+          "adjuntos": [
+            "ANEXOS RI-ALD Regional.xlsx",
+            "ANEXOS RI-CR-FO-01A al RI-CR-FO-01K - 2024 Revisado.xlsx",
+            "ANEXOS RI-GT-FO-01A al RI-GT-FO-01K - 2024 Revisado.xlsx",
+            "ANEXOS RI-HN-FO-01A al RI-HN-FO-01K - 2024 Revisado.xlsx",
+            "ANEXOS RI-NI-FO-01A al RI-NI-FO-01K - 2024.xlsx",
+            "ANEXOS RI-PA-FO-01A al RI-PA-FO-01K - 2024.xlsx",
+            "ANEXOS RI-SV-FO-01A al RI-SV-FO-01K - 2024 Revisado.xlsx",
+            "Check List ADL República Dominicana.xlsx"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: ninguno de los 8 archivos dice su versión ni su fecha de vigencia. El único dato disponible es la fecha en que se guardó el archivo. Además, el checklist de Guatemala que me pasaste no coincide con el que CGE abrió en la reunión. Mientras eso no se resuelva, la herramienta no puede decir contra qué versión revisó.\n\n¿Estás seguro de que estos son los checklists vigentes? El de Guatemala se guardó el 16 de octubre de 2026 [Seguro]. El que mostraron en la reunión decía \"Última modificación: 11 de junio\" [Seguro]. Puede ser el mismo contenido guardado otra vez o una versión distinta [Suposición]. Los nombres tampoco ayudan: dicen \"2024 Revisado\" en archivos guardados en 2025 y 2026.\n\n## Sobre el override\n\nLo aplico en la conversación y en los reportes de cada caso: puedo citar nombres, montos y números de expediente cuando sirva. Para estos archivos no cambia nada, porque son plantillas sin datos de clientes [Seguro].\n\nNo estoy de acuerdo con extenderlo a la habilidad, sus referencias y los aprendizajes, porque esos archivos se guardan y los va a usar todo CGE. En tu lugar haría esto: override en la conversación y en los reportes, y anonimato en lo que se guarda. El riesgo de tu enfoque es que el dato de un cliente reaparezca en la revisión de otro, y hoy no hay ninguna política de retención que lo limpie.\n\nEntiendo que el override no incluye las resoluciones del Comité de Riesgos ni los casos PEP o CPE; si quieres incluirlos, necesito que lo digas explícitamente. Como las instrucciones del proyecto todavía dicen lo contrario, conviene que edites la sección 4 para que las próximas conversaciones lo sepan.\n\nCorregido: el sistema es FIMS y en Hive se trabaja con tickets.\n\n## Tabla 1. Qué contiene cada archivo y para qué nos sirve\n\n| Archivo | Qué contiene | Para qué nos sirve | Alertas |\n|---|---|---|---|\n| **Guatemala** (guardado 16-oct-2026) | Tabla de equivalencias entre países y 12 checklists: del 01A al 01K, más Leaseback | Base de la primera versión de la habilidad: es el país prioritario y el más completo | Leaseback comparte el código 01A con Leasing Financiero Nuevos. El 01B (Garantía Mobiliaria) es idéntico al 01A salvo el título [Seguro] |\n| **El Salvador** (oct-2024) | 11 checklists; 3 ocultos | Reglas de El Salvador: NIT, DUI, Equifax/Infored, matrícula, credencial. El recibo se cruza contra la solicitud, no contra el FEIC | Es anterior al manual de criterios (nov-2025), que agrega reglas para El Salvador |\n| **Honduras** (ene-2025) | 10 checklists (no hay Inmobiliario); 3 ocultos | RTN, DNI, permiso de operaciones. El recibo se cruza contra el permiso de operaciones | Si llega un Leasing Inmobiliario: \"checklist no cargado\" |\n| **Costa Rica** (jul-2025) | 11 checklists, todos visibles | Buró Credid, o reporte SUGEF (CIC) si el cliente no aparece; geolocalización en lugar de recibo; personería jurídica; participación accionaria hasta los socios finales, elaborada por un abogado | La tabla de equivalencias dice \"no se tiene definido\" para el buró de persona individual |\n| **Panamá** (oct-2024) | 11 checklists; 5 ocultos | Formulario de debida diligencia, pacto social, aviso de operaciones, renta de 2 años, ITBMS, carnet de migración, ficha de seguro social | Es el más distinto de Guatemala: no se pueden heredar reglas |\n| **Nicaragua** (oct-2024) | 11 checklists, todos visibles | Nada por ahora | CGE dijo que no operan ahí. No se carga |\n| **ALD Regional** (jul-2023) | 1 hoja: Leasing Financiero Nuevos para clientes ALD, multinacionales e ingenios | Reglas de ese tipo de cliente: se omiten beneficiarios finales, recibo, estados de cuenta y declaraciones; los estados financieros se omiten si el cliente cotiza en bolsa | La hoja se llama RI-GT-FO-01A y choca con el código de Guatemala. Es el más antiguo y solo cubre un producto |\n| **República Dominicana, ALD** (sep-2024) | 1 hoja, sin código | Único checklist de RD: RNC de 30 días o menos, acta de asamblea, registro mercantil que se renueva cada 2 años | No hay checklist de RD para clientes regulares [Seguro, según lo recibido] |\n\n## Tabla 2. Mapa de productos por país\n\n| Código | Producto | GT | SV | HN | CR | PA |\n|---|---|---|---|---|---|---|\n| 01A | Leasing Financiero Nuevos | Sí | Sí | Sí | Sí | Sí |\n| 01A (2) | Leaseback | Sí | — | — | — | — |\n| 01B | Prendario (en GT: Garantía Mobiliaria) | Sí | Oculta | Oculta | Sí | Oculta |\n| 01C | Inmobiliario | Sí | Sí | No existe | Sí | Oculta |\n| 01D | Operativo | Sí | Sí | Sí | Sí | Sí |\n| 01E | Financiero Usados | Sí | Sí | Sí | Sí | Oculta |\n| 01F | Activos Extraordinarios | Sí | Sí | Sí | Sí | Sí |\n| 01G | Crédito Puente | Sí | Oculta | Oculta | Sí | Oculta |\n| 01H | Reestructuras | Sí | Sí | Sí | Sí | Sí |\n| 01I | Cambio de Beneficio | Sí | Sí | Sí | Sí | Sí |\n| 01J | Créditos Express | Sí | Oculta | Oculta | Sí | Oculta |\n| 01K | Reestructura por seguro o aporte a capital | Sí | Sí | Sí | Sí | Sí |\n\nUna hoja oculta probablemente indica que el producto no se ofrece en ese país [Probable]. Greenfleet, Arrendautos y Crédito Fiduciario aparecen en la presentación de CGE pero no tienen checklist propio [Probable: pueden usar el de otro producto].\n\n## Lo que esto cambia en el diseño de la habilidad\n\n- **Identificador.** Cada checklist debe identificarse por país + código + producto, porque el código solo se repite: hay dos 01A en Guatemala y otro en el regional [Seguro].\n- **Versión.** Como no hay versión interna, propongo registrar el nombre del archivo, su fecha de guardado y una huella del contenido, y que CGE confirme cuál está vigente. Lo ideal es pedirle a Riesgos una celda de versión.\n- **El cruce de dirección cambia por país** [Seguro]. Guatemala compara contra el FEIC, El Salvador contra la solicitud, Honduras contra el permiso de operaciones y Costa Rica contra la geolocalización. Una sola regla regional generaría falsas alarmas.\n- **Datos que no vienen en el expediente.** \"Cliente de cartera con más de 2 años y buena moral crediticia\" decide si se piden las declaraciones, y no se ve en los PDF. Tiene que entrar como dato del ticket (la etiqueta cartera o nuevo). Sin ese dato, el hallazgo baja a OBSERVAR.\n- **Reglas de criterio.** Frases como \"Quedará a criterio del Analista de Riesgos\" no se automatizan: siempre van como OBSERVAR.\n- **Una línea, varias reglas.** La línea de estados de cuenta trae al menos cinco reglas distintas. Separarlas en requisitos con id es el trabajo principal; estimo entre 60 y 80 requisitos solo para el 01A de Guatemala [Suposición].\n- **Precedencia.** El manual de criterios (nov-2025) es más nuevo que casi todos los checklists. Riesgos debe definir cuál gana cuando se contradicen.\n\n## Entregado y pendiente\n\nEntregué la tabla de conocimiento de los 8 archivos y el mapa de productos por país; las extracciones están guardadas en disco. Siguen pendientes la matriz \"Orden de documentación para escáner\", el manual de criterios y el video de Guatemala.\n\n¿Cuál es el checklist vigente de Guatemala: el que me pasaste o el que está en SharePoint con \"última modificación 11 de junio\"?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "view",
+            "descripcion": "Leer la habilidad de hojas de cálculo antes de abrir los Excel",
+            "ruta": "/mnt/skills/public/xlsx/SKILL.md"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Inventario de hojas y tamaño de cada Excel"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer el texto de cada checklist a disco y leer el de Guatemala"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer encabezados de impresión y estado de cada hoja para identificar el producto"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Comparar cada producto de Guatemala contra el leasing financiero nuevo"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer el checklist regional ALD, el de República Dominicana y la información complementaria por país"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Comparar el leasing financiero nuevo de cada país contra Guatemala"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 3,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-06T22:47Z",
+      "usuario": [
+        {
+          "texto": "Estas son las carpetas que hemos procesado. Por favor compara y ayudame a cuadrar contra historia/contexto, necesito un resultado preciso y certero por favor. Necesito una conclusión puntual y cero excusas de nada por favor. Máximo 3-5 discrepancias en el los resultados que me des",
+          "adjuntos": [
+            "1794005063914_image.png",
+            "1794005077902_image.png",
+            "1794005089589_image.png",
+            "1794005102936_image.png",
+            "1794005114859_image.png",
+            "1794005128820_image.png",
+            "1794005137232_image.png",
+            "1794005151935_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [],
+        "nota": "La transcripción guardada no registra texto visible del asistente en este turno (solo llamadas a herramientas).",
+        "herramientas_usadas": [
+          {
+            "nombre": "memory_read",
+            "ruta": [
+              "/projects/01a1ac1a-99ea-7085-9bf1-3c675974973e/areas/automatizacion-cge.md",
+              "/projects/01a1ac1a-99ea-7085-9bf1-3c675974973e/index.md"
+            ]
+          },
+          {
+            "nombre": "conversation_search"
+          },
+          {
+            "nombre": "recent_chats"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 4,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-11T21:21Z",
+      "usuario": [
+        {
+          "texto": "Hace un inventario de las ventanas de los exceles que hay porque estoy viendo que cada ventana es un checklist según aplique X situación de un caso por país. Algo sencillo \n\n* Excel de proveniencia \n* Ventana \n* Qué trae y para qué sirve \n\n\nSegún yo todo son formatos verificados y correctos",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: no todo está verificado. El checklist de Costa Rica tiene 19 instrucciones de edición sin aplicar, del tipo \"ELIMINAR FILA\", repartidas en 5 ventanas. Es un borrador, y si se carga tal cual, la herramienta pediría documentos que alguien ya decidió quitar.\n\n¿En qué te basas para decir que son formatos verificados? Ningún archivo trae firma de aprobación, versión ni fecha de vigencia [Seguro]. No estoy de acuerdo porque encontré, además del borrador de Costa Rica, códigos repetidos y una ventana idéntica a otra (detalle al final). En tu lugar, pediría a Riesgos que confirme cuáles están vigentes antes de cargarlos. El riesgo es que la herramienta marque como error algo que el checklist ya no exige.\n\nTu lectura es correcta en lo general: cada ventana es un checklist por producto o situación. Hay dos excepciones: \"Información complementaria\" es una tabla de equivalencias, no un checklist, y varias ventanas están ocultas.\n\n## Inventario\n\n| Excel de proveniencia | Ventana | Qué trae y para qué sirve |\n|---|---|---|\n| GT, SV, HN, CR, PA, NI | Información complementaria | Tabla de equivalencias por país: identificación, buró, registro tributario, patente, escritura, representación legal y recibo. Sirve para traducir un requisito de un país a otro. No es checklist. |\n| GT, SV, HN, CR, PA, NI | 01A Leasing Financiero Nuevos | Expediente madre completo (persona jurídica e individual) más la negociación estándar: hoja, solicitud, seguro, cotizaciones, flujo y ponderación. Es el checklist base; los demás se definen por diferencia contra este. |\n| Solo GT | 01A (2) Leaseback | Igual al 01A más factura original o avalúo del bien. |\n| Los seis (oculta en SV, HN y PA) | 01B Prendario; en GT se llama Garantía Mobiliaria | Igual al 01A. CR y NI agregan un formato de capacidad de pago. |\n| GT, SV, CR, NI (oculta en PA; no existe en HN) | 01C Inmobiliario | Avalúo, propuesta autorizada por Gerencia Comercial, aceptación del cliente, registro de la propiedad, impuesto del inmueble y documentos del vendedor. |\n| Los seis | 01D Operativo | Flujo autorizado por gerencia, aceptación del cliente, quién ejercerá la opción de compra y visto bueno del servicio de combustible. CR pide además anexos II y III firmados. |\n| Los seis (oculta en PA) | 01E Financiero Usados | Avalúo, visto bueno de Remarketing, multas de tránsito de 15 días o menos, impuesto de circulación y documentos del dueño anterior si es particular. |\n| Los seis | 01F Activos Extraordinarios | Memo de Remarketing con el precio de venta y título o tarjeta de circulación, aunque estén a nombre de Arrend. |\n| Los seis (oculta en SV, HN y PA) | 01G Crédito Puente | Expediente madre del leasing asociado, memo con motivo, porcentaje y forma de pago, flujo y cotización vendor. Fuera de GT pide también autorización de Gerencia General. |\n| Los seis | 01H Reestructuras | Informe de reestructura con los contratos y su saldo, carta del cliente, flujo con visto bueno de Operaciones, factura del contrato original y detalle de transacciones. |\n| Los seis | 01I Cambio de Beneficio | Expediente madre reducido más un memo con el motivo y los contratos a modificar. |\n| Los seis (oculta en SV, HN y PA) | 01J Créditos Express | Sin hoja de negociación ni flujo. Pide avalúo, vistos buenos, título y consulta de multas e impuesto de circulación. |\n| Los seis | 01K Reestructura por seguro o aporte a capital | No pide expediente madre (GT solo pide el FEIC). Informe, carta del cliente desde un correo de la empresa, flujo con visto bueno de Operaciones y Seguros, y estado de cuenta Arrend. |\n| ALD Regional | \"RI-GT-FO-01A\" | Leasing Financiero Nuevos para clientes ALD, multinacionales e ingenios. Lista lo que se omite para ese tipo de cliente: beneficiarios, recibo, estados de cuenta y declaraciones. |\n| República Dominicana | Check List ALD | El mismo tipo de cliente aplicado a RD: RNC de 30 días o menos, acta de asamblea y registro mercantil. Es el único checklist de RD. |\n\nUna ventana oculta probablemente es un producto que no se ofrece en ese país [Probable]. Nicaragua tiene todas sus ventanas visibles, pero CGE dijo que no operan ahí.\n\n## Discrepancias encontradas\n\n1. **Costa Rica es borrador** [Seguro]. Las ventanas 01B, 01C y 01E tienen 5 notas \"ELIMINAR\" cada una, la 01G tiene 3 y la 01J tiene 1.\n2. **Códigos repetidos** [Seguro]. En GT, Leaseback y Leasing Financiero Nuevos comparten el código RI-GT-FO-01A, y la hoja del archivo ALD Regional también se llama RI-GT-FO-01A.\n3. **GT 01B es copia de 01A** [Seguro]. Solo cambia el título, así que Garantía Mobiliaria no tiene ningún requisito propio.\n4. **\"Información complementaria\" no coincide entre archivos** [Seguro]. Para el buró de persona individual en Costa Rica, tres archivos dicen \"no se tiene definido\" y dos dicen \"CREDID\".\n5. **SV 01F repite un requisito** [Seguro]. La declaración de impuestos del trabajador independiente aparece dos veces seguidas.\n\nTu mensaje anterior, el de las carpetas, quedó sin respuesta: en este proyecto no hay historial de casos procesados contra el cual cuadrarlas. ¿Contra qué lista quieres compararlas: el Reporte CGE 2025-2026, los tickets de Hive u otra?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar qué pide cada ventana de los demás países en la sección de negociación"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Buscar notas de edición sin terminar dentro de los checklists"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar en qué ventanas están las notas de edición"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar en qué ventanas están las notas de edición"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 5,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T17:49Z",
+      "usuario": [
+        {
+          "texto": "Bueno mira, estos dosc me los compartió el encargado de CGE. Así démoslos por bueno, igual tenemos que armar una habilidad con múltiples parámetros para clasificar bien los documentos. \n\nLo importante es crear una red sólida de conocimientos para ir afinando criterios. Adjunto una serie de videos que son uno solo, pero por temas de espacio los coloqué en 4 partes. \nLo que quiero es que analices los documentos que se utilizaron, las relaciones entre ellos, el orden de la revisión, dependencias entre documentos, parámetros y criterios del analista, políticas documentadas, reprocesos innecesarios, riesgos y errores potenciales de delegar este proceso a una IA. \n\nNecesito que hagas una revisión 360 para poder ir armando el modelo pre clasificador de expedientes de CGE. \nQuiero crear una interfaz donde se carguen los documentos, la IA encuentre campos elegibles, muestre la confianza y las alertas. También quisiera que se mostraran las imágenes a la par de ese apartado, así como los apartados de riesgos, pero adaptados a CGE. \n\nHaz un plan como lo haría Claude Code \n\n1. Explora las grabaciones y ejecutas las ordenes que te di\n2. Proponme un artefacto como una pre alfa del proyecto\n3. Ejecutar el artefacto. \n\n\nNo quiero saber de limitaciones, quiero estrategias funcionales, replicables y escalables.",
+          "adjuntos": [
+            "Revisión 1 - Automatización CGE.vtt",
+            "Revisión 1 - Automatización video 4.mp4",
+            "Revisión 1 - Automatización video 1.mp4",
+            "Revisión 1 - Automatización video 2.mp4",
+            "Revisión 1 - Automatización video 3.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Tengo el material de las grabaciones procesado. Antes de construir verifico un dato clave de la cotización contra el formulario.",
+          "Toma en cuenta: la analista no revisa con el checklist oficial, sino con uno que ella misma modificó. Además, en la grabación su práctica contradice al checklist en al menos tres puntos. Si el clasificador se arma solo con los documentos dados por buenos, va a señalar distinto de lo que señala CGE.\n\n¿Qué regla manda cuando el checklist y la analista no coinciden? Ejemplo [Seguro]: ella acepta el Conoce a su cliente con solo la firma del supervisor, y el checklist exige las firmas del asesor y del supervisor. Otro: el checklist de usados todavía menciona a una persona que ya no trabaja ahí, y ella misma dijo que está desactualizado.\n\nNo estoy de acuerdo con darlos por buenos sin más, porque la práctica real los corrige en silencio. En tu lugar, cargaría el checklist como base y registraría cada práctica distinta como una regla en conflicto, marcada OBSERVAR hasta que Riesgos decida. El riesgo de tu enfoque son falsas alarmas en las primeras semanas, justo cuando se está ganando la confianza del equipo.\n\nNo te pregunté por analogías porque las instrucciones del proyecto las prohíben dentro de documentos y herramientas; en ese conflicto sigo las del proyecto.\n\n## Fase 1 · Exploración ✔\n\n- **Material.** Las 4 partes se traslapan [Seguro]. Las procesé contra la transcripción completa (1 h 44 min) y, al quitar los cortes repetidos, quedaron 259 pantallas distintas de unos 980 cortes de 15 segundos. Leí el texto de todas y vi en detalle las clave.\n- **Caso revisado.** Guatemala, persona jurídica nueva, Leasing Financiero Usado.\n\n**Lo más valioso que encontré** [Seguro, recalculado contra la pantalla]. La analista dijo que el desembolso \"no cuadraba\" y no supo por qué. Sí cuadra: en un usado de 2024 o anterior, la renta inicial lleva IVA agregado, así que el desembolso es el precio menos el precio × % de renta inicial × 1.12. Verifiqué así todos los montos de la cotización: renta inicial, gastos iniciales, pago inicial, opción de compra, seguro con GPS y total mensual; la única diferencia es un centavo de redondeo. Era una falsa alarma humana causada por una fórmula que no está escrita en ningún lado. Codificar esas fórmulas elimina reprocesos que hoy ni siquiera se ven.\n\n## Revisión 360\n\n**Relaciones entre documentos: qué documento manda en cada dato**\n\n| Dato | Documento que manda | Se cruza contra |\n|---|---|---|\n| Razón social (idéntica, incluso \"S.A.\") | Patente de sociedad | FEIC, Conoce a su cliente, solicitud, cotización, estados financieros, declaraciones |\n| Representante, DPI, estado civil | DPI | FEIC, Conoce a su cliente, nombramiento, solicitud, checklist de seguro |\n| NIT de empresa y del representante; contador | RTU | FEIC, solicitud, declaraciones, estados financieros |\n| Dirección | Recibo (en GT) | FEIC, Conoce a su cliente, solicitud |\n| Vigencia del nombramiento | Nombramiento | FEIC, Conoce a su cliente, solicitud |\n| Escritura, notario, registro | Escritura y patente de sociedad | FEIC |\n| Bien: marca, línea, año | Tarjeta de circulación (usado) o cotización vendor (nuevo) | Conoce a su cliente, cotización, flujo, avalúo |\n| Porcentajes, plazo, TIR, asesor | Hoja de negociación | Conoce a su cliente, cotización, flujo |\n| Precio, vendor, ejecutivo | Cotización vendor | FEIC, Conoce a su cliente, solicitud, cotización |\n| Correlativo | Cotización | Flujo (vienen del mismo sistema) |\n\n**Orden de revisión observado**\n\n1. Preparar la carpeta: descargar de SharePoint, crear cliente > año > mes > MADRE, renombrar con el número del orden de escaneo y unir los informes de buró.\n2. Revisar el expediente madre del 1 al 13. Los documentos fuente validan al FEIC.\n3. Usar el FEIC y el Conoce a su cliente, ya validados, como referencia para el negocio. Es un atajo propio de la analista y es el patrón correcto para la herramienta.\n4. Revisar el negocio: hoja, solicitud, seguro, cotización, flujo, vendor, avalúo, tarjeta, multas y vistos buenos.\n5. Hacer los cálculos al final.\n6. Mover el ticket a Recepción FIMS (cotizadores manuales) o a Recepción FLOW (cotización web), o devolverlo a Comercial.\n\n**Criterios de la analista que no están escritos así en el checklist** [Seguro]\n\n| Criterio | Severidad |\n|---|---|\n| Mora de 61 días o más en TransUnion sin finiquito | BLOQUEA |\n| Demanda ejecutiva o sumaria en Infornet sin desistimiento | BLOQUEA |\n| APC de Panamá con calificación mayor a 3 | BLOQUEA |\n| DPI vencido el día del ingreso, aunque sea por un día | BLOQUEA |\n| Conoce a su cliente sin firma del supervisor | BLOQUEA |\n| Informes de buró solo de socios con 10 % o más; si los beneficiarios son empresas, no se piden | CORREGIR |\n| FEIC vale un año; se verifica que venga su archivo JSON | CORREGIR |\n| En el estado civil manda el DPI, no lo que declare la persona | CORREGIR |\n| Integraciones válidas solo con la firma del contador | OBSERVAR |\n| Persona de cobros: solo se verifica que esté bien escrita | No se valida |\n\n**Políticas contra práctica: conflictos que debe resolver Riesgos**\n\n1. Firma del asesor en el Conoce a su cliente (explicado arriba).\n2. El manual define que en un reingreso solo vuelve el documento corregido, pero en otros países el caso da 6 a 8 vueltas.\n3. El checklist de usados nombra a una persona que ya no está.\n\n**Reprocesos innecesarios y estrategia para eliminarlos**\n\n- **Ordenar, renombrar y unir archivos.** La herramienta clasifica cada archivo por nombre, número de orden o lectura con IA.\n- **Documentación incompleta** (en Honduras llegan 5 de 10 documentos). El inventario se calcula al cargar, antes de leer, y todo lo faltante sale en la primera devolución.\n- **Falsas alarmas de cálculo.** Las fórmulas quedan codificadas con sus parámetros.\n- **Revisar el caso completo en cada reingreso.** La segunda revisión debe compararse contra la primera y separar corregido, pendiente y nuevo; queda para la versión alfa.\n- **El JSON del FEIC, que CGE no puede abrir** [Probable]. Es la fuente más confiable para automatizar, porque son datos estructurados que no requieren leer imagen alguna.\n\n**Riesgos de delegar a la IA y su control**\n\n- **Lectura errónea.** Cada campo muestra su confianza y su página, y lo ilegible nunca se da por bueno.\n- **Firma comparada contra el DPI.** No se automatiza: siempre sale como OBSERVAR.\n- **Vistos buenos y notas.** La herramienta muestra el motivo y la persona decide.\n- **Caso PEP.** Si el FEIC marca PEP, la herramienta se detiene.\n- **Confianza excesiva.** Cada hallazgo exige una decisión humana, y esa decisión queda registrada.\n- **Datos que salen al proveedor.** En la máquina de la analista ya está activo el asistente de IA de Acrobat [Seguro]: los datos ya salen hoy, sin que nadie lo haya aprobado.\n\n## Fase 2 y 3 · Pre alfa publicada\n\nLa herramienta tiene ocho pestañas: inventario contra el checklist, revisión con la imagen de la página al lado de los campos leídos y su confianza, cruces con el valor de cada documento, cálculos, hallazgos con la decisión de CGE, correcciones listas para el ticket en bloques, riesgos y base de conocimiento (36 reglas con id, fuente y grado de automatización, más el mapa de dependencias).\n\nPara probarla, pulsa **Abrir expediente de prueba**. Usa datos ficticios con errores sembrados y debe dar 3 BLOQUEA, 7 CORREGIR y 4 OBSERVAR; lo probé antes de publicar [Seguro]. Con documentos reales: usa **Cargar carpeta** y luego **Leer con IA**, que consume tu cuenta de Claude y envía el contenido al proveedor de la IA.\n\n## Ruta escalable\n\n- **Alfa.** Medir con 20 expedientes ya revisados, usando las subtareas de Hive como respuesta correcta para calcular detección y falsas alarmas. Agregar la comparación entre revisión y reingreso.\n- **Beta.** Leer el JSON del FEIC, cargar los checklists de SV, HN, CR y PA, y documentar las fórmulas de nuevo y operativo.\n- **Producción.** Empaquetar como la habilidad `revisor-cge`, con los checklists por país en referencias separadas.\n\nPendiente: confirmar los montos fijos (cargo de dispositivo y GPS, traspaso, cuota de GPS) y la versión vigente del checklist. ¿Quién en Riesgos puede decidir los conflictos entre el checklist y la práctica?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Medir duración de los 4 videos y revisar la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Limpiar la transcripción por turnos de hablante y guardarla"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Comprobar si los 4 videos se traslapan o son partes consecutivas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Confirmar la relación entre los videos y la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Comparar los videos 2, 3 y 4 en más puntos"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer un cuadro cada 15 segundos de los 4 videos"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Detectar pantallas únicas entre los 4 videos para eliminar traslapes"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar si hay OCR disponible para leer títulos de pantalla"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Descargar el idioma español para el OCR"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer con OCR el texto de cada pantalla única y guardarlo"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Continuar el OCR en segundo plano"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer el primer tercio de la transcripción de la revisión"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas y leer el segundo tercio de la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas y leer el último tercio de la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas finales de la transcripción y revisar el OCR"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Resumir qué documento aparece en cada pantalla única según el OCR"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Armar dos hojas con las pantallas clave de la revisión"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Ver pantallas clave: checklist de la analista, Conoce a su cliente, carta de buró y SharePoint",
+            "ruta": "/home/claude/cge/rvsheet0.jpg"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Ver pantallas clave: checklist de seguro, cotización, flujo y visto bueno",
+            "ruta": "/home/claude/cge/rvsheet1.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar las verificaciones numéricas y hallazgos visuales"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Leer la habilidad de diseño de interfaces antes de construir el artefacto",
+            "ruta": "/mnt/skills/public/frontend-design/SKILL.md"
+          },
+          {
+            "nombre": "Artifact"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer el contrato de la capacidad de consulta a Claude y de descargas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Revisar límites de imágenes y la forma de sample.json"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer ejemplo de sample.json y forma de los límites"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar las fórmulas de la cotización del caso contra los montos de la pantalla"
+          },
+          {
+            "nombre": "create_file",
+            "descripcion": "Construir la pre alfa del pre clasificador de expedientes de CGE",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar la lógica del revisor con el expediente de prueba"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Corregir la comparación de teléfonos y mayúsculas, y volver a probar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Quitar textos duplicados en hallazgos y validar sintaxis"
+          },
+          {
+            "nombre": "Artifact",
+            "descripcion": "Pre clasificador de expedientes CGE · pre alfa",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 6,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T18:15Z",
+      "usuario": [
+        {
+          "texto": "Qué caso es el de las grabaciones que te porporcioné? Solo decime el el nombre, nada mas",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Enertiva, Sociedad Anónima."
+        ],
+        "nota": "",
+        "herramientas_usadas": []
+      }
+    },
+    {
+      "turno": 7,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T18:49Z",
+      "usuario": [
+        {
+          "texto": "Quiero que al apachar cualquiera de estos botones tu direccione al apartado exacto de la página y se resalte. No sé como lo vas a hacer, pero quiero algo bien hecho y no quiero saber de tus limitaciones. \nLo único que me interesa es el resultado. \n\nVeo que el funcionamiento si es algo así, pero me gustaría que subrayaras el pdf o png como tal.\n\nOtroa cosa: en revisión de documento cuando haces clic en un item, la lista se va hasta arriba, se reinicia. Eso es poco práctico, soluciónalo \n\nNecesito que todas tus dudas me las coloques en orden de lista enumerada y consolidada por favor, necesito un formato más comprensible.  \n\nEn la segunda imágen, es la lista que te digo, pero otra cosa: no me dice el hallazgo como tal. Quisiera que me dijera en 2-3 palabras de lo que se trata y si es revisión, crítico, regular... La escala",
+          "adjuntos": [
+            "1794508172202_image.png",
+            "1794509120911_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: en tu segunda captura cada documento aparece dos veces, uno con hallazgos y otro sin ellos. Eso suele pasar cuando el expediente se carga dos veces o cuando Comercial sube un mismo documento partido en varios archivos. En ambos casos se inflaba la lista; ya está corregido.\n\nAl abrir la versión nueva tienes que cargar el expediente otra vez, porque la página no guarda los documentos entre versiones.\n\n## Lo que cambió\n\n1. **Resaltado sobre la página.** Al hacer clic en un campo, en una alerta de la lista, en un hallazgo, en un cruce o en un cálculo, se abre el documento en la página correcta y la vista se centra en el dato. El dato queda resaltado en amarillo, subrayado y con una etiqueta que dice qué campo es.\n   - **PDF digital:** la ubicación es exacta, porque sale del texto del propio PDF. También ubica valores cortos como \"3 %\" o \"36\" buscando la etiqueta del campo que tienen al lado [Seguro, probado con un PDF simulado].\n   - **Escaneo o foto:** usa la ubicación que devuelve la lectura con IA y se dibuja con borde punteado, para que se vea que es aproximada [Probable].\n   - **Sin ubicación:** si el dato no se encuentra, se marca la página completa con la nota \"revisar la página completa\".\n   - Agregué zoom de 125, 150 y 200 %.\n2. **La lista ya no se reinicia.** La lista de documentos, la tabla de campos y el visor conservan su posición en cada clic.\n3. **La lista dice de qué trata cada hallazgo.** Cada documento muestra hasta tres hallazgos en 2 o 3 palabras con su nivel, por ejemplo \"Crítico · Firmas\" o \"Regular · Estado civil\". Al hacer clic en esa línea vas directo al dato resaltado.\n4. **Escala.** Crítico equivale a BLOQUEA, Regular a CORREGIR y Revisión a OBSERVAR. En la trazabilidad exportada se mantienen los nombres del proyecto, para no romper la medición.\n5. **Archivos repetidos.** Si se carga el mismo archivo dos veces, se ignora y aparece un aviso. Los documentos que llegan partidos (estados financieros por año, Infornet y TransUnion, estados de cuenta) se tratan como partes de un mismo documento, no como versiones. Agregué los botones Vaciar y Leer este documento.\n\nEn tu primera captura, el Flujo dice \"Sin leer\" porque ese archivo no pasó por la lectura con IA; ahora se puede leer solo ese documento desde su panel.\n\nProbé la lógica con el expediente de prueba: todos los campos quedan ubicados en su página y salen 3 Críticos, 7 Regulares y 4 de Revisión [Seguro]. No la vi renderizada en un navegador desde aquí: confírmame que el resaltado cae bien en tu pantalla.\n\n## Dudas abiertas\n\n1. Las dos copias de cada documento en tu captura, ¿son una carga doble o archivos partidos que sube Comercial?\n2. ¿Cuál es el checklist de Guatemala vigente: el que me pasaste o el de SharePoint con \"última modificación 11 de junio\"?\n3. ¿Quién en Riesgos decide los conflictos entre el checklist y la práctica? Son tres: la firma del asesor en el Conoce a su cliente, el reingreso que según el manual devuelve solo el documento corregido pero en la práctica es el caso completo, y el checklist de usados que nombra a una persona que ya no está.\n4. ¿Siguen vigentes los montos fijos (cargo de dispositivo y GPS de 1,386 sin IVA, traspaso de 1,835, GPS mensual de 139) y cambian por país?\n5. ¿El override deja fuera las resoluciones del Comité y los casos PEP o CPE? Lo estoy tratando así.\n6. ¿La escala Crítico, Regular y Revisión es la definitiva?\n7. ¿Cuál es el límite de caracteres de un ticket de Hive? Hoy uso 1,500 por defecto.\n8. ¿Se puede conseguir un archivo JSON del FEIC de ejemplo?\n9. ¿Contra qué lista cuadro las carpetas procesadas que me mostraste: el Reporte CGE, los tickets de Hive u otra?\n10. ¿Cuándo documentamos con CGE las fórmulas de Leasing nuevo y operativo?\n11. ¿El checklist de Costa Rica, que trae notas de \"ELIMINAR\" sin aplicar, tiene una versión final?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar los bloques de código que voy a reemplazar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Aplicar resaltado sobre la página, memoria de desplazamiento, escala de niveles y carga sin duplicados"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar la lógica nueva: cajas del expediente de prueba, niveles y ubicación en PDF"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Repartir los campos del expediente de prueba en más páginas y ubicar valores cortos junto a su etiqueta"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Corregir la búsqueda por etiqueta y volver a probar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar si hay un navegador para revisar la página visualmente"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Instalar un navegador sin interfaz para probar la página"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 8,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T21:46Z",
+      "usuario": [
+        {
+          "texto": "Quiero que la calculadora tengas los números necesario spara hacer los cálculos y que los analistas puedan editar los cálculos si es necesario.  \n\nTambién un campo para agregar cálculos. \n\n1. Creo que fueron carga doble. Hay que mitigar eso. Consultar si se desea subir archivos adénticos. \n2. No sé. Claramente el que tiene la analista, se lo voy a solicitar. \n3. No sé, pero hay que apegarnos al checklist y dejar alg+un apartado para incluir criterios felxibles del analista. \n4. En qué apartado estás viendo eso? No estoy seguro. En el flujo si son necesarios, la única manera que un bien como equipo de cocina o algo similar (descuento de documentos) o si es vehículo únicamente con el visto buena de Pablo Cabrera. \n5. Cual override? En qué momento tmaste esa decisión, creo que eso solo puede hacer el criterio humano \n6. No, puede variar. Tienes alguna recomendación? \n7. No sé, pendiente de preguntar\n8. Mmmm este es un Json de persona jurídica, te sirve? \n9. La que menciona la analista en el video \n10. Probablemente en estas semanas. Tengo pendiente de subirte videos de Honduras y RD. Y en los siguientes días tengo de osd emás países. \n11. no sé",
+          "adjuntos": [
+            "1794518369797_image.png",
+            "personaJuridica - 2026-10-29T210655.516.json"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: en tu captura los resultados \"Regular\" de los cálculos eran un error de la herramienta. El precio venía escrito como \"Q.399,000.00\" y el punto de \"Q.\" se leía como decimal, así que el precio quedaba en 0.399 [Seguro]. Ya está corregido; con el precio bien leído, esos montos cuadran.\n\nSobre el override: lo decidiste tú, no yo. En tu segundo mensaje escribiste \"vamos a hacer override a la regla del procesamiento de datos de clientes\". Lo apliqué solo en esta conversación (puedo citar nombres y cifras del caso) y mantuve la habilidad y sus referencias sin datos de clientes. Las resoluciones del Comité y los casos PEP o CPE los dejé fuera, porque eso solo lo decide una persona. La herramienta se detiene si el FEIC o su JSON marcan PEP o CPE.\n\n## Lo que cambió en la herramienta\n\n1. **Calculadora con sus datos a la vista.** Hay una tabla con cada dato que usan las fórmulas: precio, porcentajes, plazo, año del modelo, renta, seguro, GPS, traspaso, cargo de dispositivo, IVA y factor de IVA. Cada dato dice de qué documento y página sale (con clic llevas al dato resaltado) y se puede editar para ese expediente; queda marcado como editado y con botón Restaurar.\n2. **Fórmulas editables.** Cada fórmula se escribe en texto, por ejemplo `precio * pct_ri / 100 * factor_ri`. Si la cambias, se recalcula todo y queda registrado quién cambió qué, con el valor de antes y el de después; ese registro se incluye en la trazabilidad.\n3. **Agregar cálculo y agregar dato.** Puedes crear cálculos propios (nombre, fórmula y contra qué campo de qué documento compararlo) y datos nuevos, como un aporte a capital. Los cálculos agregados se guardan en el navegador para los siguientes expedientes; los datos agregados son solo del expediente.\n4. **Archivos idénticos.** Antes de cargar, la herramienta compara el contenido de cada archivo, no solo el nombre. Si encuentra idénticos, te pregunta si los omite o los carga de todas formas.\n5. **Lectura del JSON del FEIC.** Si cargas el JSON, la herramienta toma de ahí los datos del FEIC tal cual vienen del sistema, sin pasar por la IA, y los usa como fuente principal en los cruces.\n6. **Criterios flexibles del analista.** En Base de conocimiento hay un apartado para agregarlos. Se pueden activar o desactivar y aparecen como Revisión en el documento que indiques, sin cambiar las reglas del checklist.\n7. **Apego al checklist.** Ahora un Conoce a su cliente sin la firma del asesor sale como Regular, porque el checklist exige ambas firmas. La práctica de aceptarlo solo con la del supervisor quedó como criterio flexible, desactivado.\n8. **Abreviaturas societarias.** \"S.A.\" con puntos equivale a \"Sociedad Anónima\"; \"SA\" sin puntos sigue saliendo como Regular, igual que lo devuelve la analista. Las diferencias de solo mayúsculas ya no generan hallazgo.\n\nProbé todas las vistas, las fórmulas, las ediciones y tu JSON en código [Seguro]. No las vi renderizadas en un navegador: vuelve a cargar el expediente en la versión nueva y confírmame cómo se ve.\n\n## Respuestas a tus puntos\n\n1. **Carga doble.** Resuelto con el aviso de archivos idénticos (punto 4 de arriba).\n2. **Checklist de la analista.** Cuando lo tengas, lo cargo como la base.\n3. **Criterios.** Quedó el checklist como regla y un apartado aparte para los criterios del analista.\n4. **De dónde salen los montos fijos.** Los dijo la analista en la grabación. A la hora 1:19:32 explica que el cobro del dispositivo (1,116.50) más el del GPS (269.50) suman 1,386 sin IVA. A la 1:20:31 menciona el traspaso inicial de 1,835 en usados de Guatemala. A la 1:29:14 dice que el GPS de 139 es fijo y que cambiarlo requiere visto bueno de la junta directiva. La cotización que mostró cuadra exactamente con esos montos [Seguro]. Con tu aclaración, la regla de GPS quedó así: obligatorio en vehículos, sin GPS solo con visto bueno del jefe de activos, y no aplica a bienes que no son vehículos.\n5. **Override.** Respondido arriba.\n6. **Escala.** Mi recomendación es definir los niveles por la consecuencia sobre el caso, no por el documento:\n   - Crítico: el caso no puede avanzar.\n   - Regular: Comercial lo corrige.\n   - Revisión: lo decide la persona de CGE.\n\n   Los nombres ya son editables en Base de conocimiento, y lo que la analista reclasifica queda registrado. Con 20 o 30 casos revisados se ve dónde ajustar.\n7. **Límite del ticket.** Queda pendiente.\n8. **JSON.** Sí sirve, y mucho: la herramienta saca 27 campos exactos y además trae la marca de CGE de si el cliente es CPE. En este caso hay un punto a revisar [Probable]. El JSON dice \"GENERACIÓN, TRASMISIÓN DISTRIBUCIÓN DE ENERGÍA ELÉCTRICA\", sin la \"Y\". La analista leyó el RTU como \"generación, transmisión y distribución\". Si el RTU dice eso, el FEIC no copió el texto exacto y la herramienta lo marcaría como Regular.\n9. **Lista para cuadrar las carpetas.** Es el reporte diario de casos que menciona la analista; necesito ese archivo.\n10. **Videos de Honduras y RD.** Listo para procesarlos cuando lleguen.\n11. **Checklist de Costa Rica.** Queda pendiente.\n\n## Dudas abiertas\n\n1. ¿Me compartes el reporte diario de casos que menciona la analista, para cuadrar las carpetas?\n2. ¿Cuál es el límite de caracteres de un ticket de Hive?\n3. ¿Los montos de 1,386, 1,835 y 139 cambian por país y cada cuánto se actualizan?\n4. ¿Existe un JSON equivalente para persona individual y empresa individual?\n5. ¿Quién aprueba un criterio flexible antes de activarlo para todo el equipo?\n6. ¿Mantengo el override en la conversación o lo reviertes?\n7. ¿Hay versión final del checklist de Costa Rica?"
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar en la grabación dónde la analista menciona los montos fijos"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Obtener la hora exacta de cada mención en la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar los puntos del código que voy a modificar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer las líneas exactas que voy a reemplazar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer más líneas exactas antes de aplicar el parche"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Aplicar calculadora editable, cálculos y datos agregados, aviso de archivos idénticos, lectura del JSON del FEIC, criterios flexibles y escala configurable"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar números con Q., fórmulas, ediciones y lectura del JSON real"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Aceptar abreviaturas societarias con puntos y no marcar diferencias solo de mayúsculas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ver la línea exacta de mayúsculas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Aplicar de nuevo el cambio de abreviaturas y probar"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ejecutar todas las vistas con el expediente de prueba y con el JSON para detectar errores"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 9,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T22:06Z",
+      "usuario": [
+        {
+          "texto": "1. Como así reporte diario? \n2. Lo voy a consultar \n3. No sé, yo pienso que si \n4. De momento no, yo lo tendría que hacer, para qué lo queres? \n5. Los jefes de CGE \n6. Cual fue el override? \n7. De momento no",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Ahora agrego la aprobación de la jefatura a los criterios flexibles.",
+          "Toma en cuenta: el override no lo inventé yo, sale de una frase tuya. Si no lo recuerdas como una decisión, lo prudente es revertirlo y volver a la regla del proyecto, porque hoy esta conversación cita datos reales de clientes amparada solo en esa frase.\n\nOtro punto que no estás viendo: si los montos fijos cambian por país, la calculadora hoy aplica los de Guatemala a todos los países y va a generar falsas alarmas en Honduras o RD. Los videos que vienen sirven para sacar esos montos por país.\n\n## Tus puntos\n\n1. **Reporte diario.** Lo menciona la analista en la grabación de la revisión, entre la hora 1:39:53 y la 1:40:06: dice que ese mes atendió 108 negocios y que \"tenemos un reporte en el que llenamos cuántos casos hacemos al día\". En la primera reunión se veía abierto un Excel llamado \"REPORTE CGE 2025-2026\"; probablemente es el mismo [Probable]. Me sirve para dos cosas: cuadrar las carpetas de tus capturas contra lo que CGE registra como procesado, y tener una línea base de volumen y tiempos.\n2. **Límite del ticket.** Queda pendiente de tu consulta.\n3. **Montos por país.** Con los videos de Honduras y RD extraigo esos montos. Cada país tendrá sus propios valores en la calculadora y se aplicarán según el país que elijas en el perfil del expediente.\n4. **JSON de persona individual.** Lo quería para leer el FEIC de personas individuales igual de exacto que el de jurídicas, sin pasar por la IA. No hace falta que lo hagas tú: solo sirve si el sistema ya lo genera. Si no existe, la herramienta lee el PDF y listo.\n5. **Aprobación de criterios.** Ya está en la herramienta. Cada criterio flexible tiene un campo \"Aprobado por\" y no se puede activar hasta que la jefatura de CGE lo apruebe; si se borra la aprobación, se desactiva solo. La aprobación queda en la trazabilidad. Lo probé: sin aprobación no genera notas y con aprobación sí [Seguro].\n6. **El override.** En tu segundo mensaje escribiste: \"Para efectos de practicidad y eficiencia, vamos a hacer override a la regla del procesamiento de datos de clientes, si lo puedes hacer\". La regla es la sección 4 de las instrucciones del proyecto: no repetir nombres, documentos de identidad ni números de expediente.\n   - Lo que cambió: en esta conversación he citado datos de clientes, como el nombre del caso de la grabación o los datos del JSON.\n   - Lo que no cambió: la habilidad y sus referencias siguen sin datos de clientes, y las resoluciones del Comité y los casos PEP o CPE siguen fuera.\n7. **Checklist de Costa Rica.** Queda en espera.\n\n## Dudas abiertas\n\n1. ¿Revierto el override? Mi recomendación es revertirlo: vuelvo a reportar hallazgos sin repetir datos de clientes, y si en algún momento necesitas un dato puntual, me lo pides y tú decides en ese momento.\n2. ¿Me compartes el reporte de casos que llena CGE, probablemente el \"REPORTE CGE 2025-2026\"?\n\nPendientes de tu lado: el límite de caracteres del ticket de Hive, el checklist de la analista y los videos de Honduras y RD."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar en la grabación la mención del reporte de casos"
+          },
+          {
+            "nombre": "Artifact"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar que un criterio solo se aplica cuando está aprobado"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 10,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T22:12Z",
+      "usuario": [
+        {
+          "texto": "1. Déjalo como duda para ahcer a CGE junto con las demáspendientes para enviar en un correo \n2. X2\n3. Okay\n4. Okay\n5. Okay\n6. De momento sigue activo \n7. Okay \n\n\nAdjunto Honduras",
+          "adjuntos": [
+            "Revisión 2 - Automatización video 2.mp4",
+            "Revisión 2 - Automatización video 3.mp4",
+            "Revisión 2 - Automatización CGE.vtt",
+            "Revisión 2 - Automatización video 1.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: el \"reporte diario\" existe y es más que un registro. En la grabación de Honduras la analista abre un Excel llamado \"Reporte diario de revisión CGE\", con hojas de gastos de GPS, gastos de traspaso por país, IVA por país y una por producto. Es su base de conocimiento paralela: ahí están los montos que la calculadora necesita.\n\n¿Qué tan seguro estás de que el problema de los países es solo de capacitación? El caso de Honduras dio 4 vueltas de correcciones, y en cada vuelta Comercial arreglaba lo pedido y rompía otra cosa: quitó la puntuación que ya estaba bien, borró uno de los dos vendors y agregó centavos [Seguro]. La palanca principal es comparar cada reingreso contra la versión anterior, no explicar mejor.\n\n## Honduras: revisión 360\n\n**Lo que cambia frente a Guatemala** [Seguro, según la grabación]\n\n| Tema | Guatemala | Honduras |\n|---|---|---|\n| FEIC | Sí, con archivo JSON | No existe; solo el Conoce a su cliente, con otro formato |\n| Carta de buró | Sí | No; solo los informes de Infornet y TransUnion |\n| Patentes | Patente de comercio y de sociedad | Permiso de operaciones |\n| Nombramiento | Documento aparte, con registro, folio y libro | Dentro de la escritura, con cuadros de inscripción y matrícula |\n| Registro tributario | RTU de la empresa y del representante | RTN de ambos; el del representante es su número de identidad más un dígito |\n| Declaraciones | 3 meses de IVA | Una sola, anual |\n| Impuesto | 12 % | 15 % |\n| Seguro | Normalmente con Arrend | \"Endosado\" es común: no lleva checklist de seguro ni cuota de seguro |\n| Notas de la hoja | Cortas | Repiten todas las condiciones y el bono vendor; deben coincidir con la hoja |\n\n**Criterios nuevos de la analista**\n\n- **Cargo del representante.** Debe decir lo mismo en todos los documentos (por ejemplo \"poder de administración\"). Si hay varios representantes, toda la documentación debe ser del que firma.\n- **Bien financiado.** Debe describir todo lo que se financia, por ejemplo camión más plataforma abatible, y con dos proveedores van los dos.\n- **Accionistas.** Manda la última escritura. En este caso, el Conoce a su cliente y la solicitud traían accionistas distintos entre sí y frente a la escritura.\n- **Monto solicitado.** Un centavo de diferencia contra el precio se devuelve, porque FIMS lo rechaza después.\n- **Escrituras.** Se buscan entre muchas modificaciones hasta que coincidan el número y la fecha; si ninguna coincide, se pide.\n\n**Reprocesos que la herramienta puede cortar**\n\n- **Escrituras largas.** Son de 90 páginas y los accionistas están dispersos. La analista probó una IA y le devolvió accionistas de otra escritura, no de la vigente. La herramienta debe pedir la escritura más reciente y mostrar la página de origen.\n- **Datos que faltan siempre.** Los datos del vendor en la proforma y el registro tributario del representante: se piden en la primera devolución.\n- **Duplicados.** Comercial duplica páginas del informe de buró.\n\n**Segunda falsa alarma humana** [Probable]. La analista habló de una diferencia de centavos en la opción de compra: en su calculadora sumó 19,728.24 + 2,875 = 22,603.24. La fórmula da 19,728.26 + 2,875 = 22,603.26, exactamente lo que dice el documento. Ya van dos casos (el desembolso de Guatemala y este) en los que el cálculo manual generó una alarma que no era error.\n\n## Cambios en la herramienta\n\n1. **Fórmulas comunes para todos los países.** Verifiqué que las mismas fórmulas cuadran el caso de Guatemala (usado) y el de Honduras (nuevo) [Seguro]:\n   - Renta inicial = valor sin IVA × % × (1 + IVA).\n   - Gastos iniciales = valor sin IVA × % + cargo de dispositivo y GPS × (1 + IVA) + bono vendor.\n   - Lo único que cambia por país son los montos.\n2. **Montos por país.** Están cargados los de Guatemala y Honduras y el IVA de cada país según el reporte diario. Donde falta un monto, la calculadora lo pide.\n3. **Checklist de Honduras.** Lleva permiso de operaciones, sin FEIC ni carta de buró, con declaración anual. El checklist de seguro queda como \"No aplica\" cuando el seguro es endosado.\n4. **Reglas y cruces nuevos.**\n   - Falta del registro tributario del representante.\n   - Rentas que cambian entre meses sin una nota que lo explique.\n   - Accionistas comparados contra la última escritura.\n   - Registro del nombramiento (matrícula).\n   - Monto solicitado contra el precio.\n   - Razón social contra el permiso de operaciones.\n\nProbé el caso de Honduras con los montos vistos en pantalla: los 9 cálculos cuadran [Seguro]. El expediente de prueba de Guatemala sigue dando los mismos resultados.\n\nAquí va el correo con las consultas pendientes para los jefes de CGE:",
+          "El correo lleva las 12 consultas agrupadas en documentos, montos y criterios; puedes quitar cualquier punto antes de enviarlo.\n\nPendiente de tu lado: el video de República Dominicana. Lo siguiente que construiría es la comparación de cada reingreso contra la versión anterior, que es lo que habría cortado las 4 vueltas de este caso."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Medir los videos de Honduras y limpiar su transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer y leer pantallas de Honduras en segundo plano, y leer el primer tramo de la transcripción"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas de Honduras y leer el segundo tramo"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas y leer el último tramo de Honduras"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Revisar el avance del OCR y buscar los montos de la cotización de Honduras"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar notas de cálculos de Honduras y esperar el OCR"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ver si el proceso de extracción sigue corriendo"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar en la transcripción de Honduras los momentos de los cálculos"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Extraer pantallas de la cotización de Honduras en los momentos de los cálculos"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Ver la cotización de Honduras en el momento del traspaso",
+            "ruta": "/home/claude/cge/hn/k/t4570.png"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Armar una hoja con otras pantallas de los cálculos de Honduras"
+          },
+          {
+            "nombre": "view",
+            "descripcion": "Ver otras pantallas de cálculos de Honduras",
+            "ruta": "/home/claude/cge/hn/k/sheet.jpg"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Guardar lo verificado y ubicar el código de checklist y parámetros"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ver dónde se usan el checklist y los parámetros"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Agregar Honduras: checklist, permiso de operaciones, montos por país, fórmula unificada y reglas nuevas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar Guatemala y un caso de Honduras con los montos vistos en pantalla"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          },
+          {
+            "nombre": "message_compose_v1"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 11,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-12T22:35Z",
+      "usuario": [
+        {
+          "texto": "Necisto que te centres en el apartado de la escritura. \n\nQuiero que me entregues un tipo resumen ejecutivo dinámico donde se pueda visualizar una historia cronológica del reparto de acciones y se pueda ver gráficamente las veces que ha cambiado la estructura y cómo está hoy en día. \nAlgo así más abajo de los cuadros de la derecha",
+          "adjuntos": [
+            "1794522942533_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: en tu captura la lectura de la escritura vio solo 4 de sus páginas (la nota lo dice), así que los accionistas de ese campo eran una suposición con información parcial. La historia nueva lee todas las páginas por lotes; mientras no la corras, ese campo no es confiable.\n\n¿Qué pasa si Comercial no subió las escrituras de modificación? La escritura de tu captura es de 1941. Si después hubo cesiones o aumentos de capital que no vienen en el expediente, la herramienta mostraría como estructura de hoy la de 1941. Por eso agregué una alerta cuando el último cambio registrado tiene más de 5 años: pide confirmar que no existan modificaciones posteriores.\n\n## Lo que hay ahora debajo de los campos de la escritura\n\n1. **Botón \"Leer todas las escrituras con IA\".** Recorre todas las páginas de las escrituras y de la carta accionaria en lotes, no solo las primeras. Cada lote recibe un resumen de lo encontrado antes, para que un evento que empieza en una página y termina en otra quede completo. Puedes detenerlo en cualquier momento.\n2. **Resumen ejecutivo.** Una frase que dice cuántas veces cambió la estructura, desde cuándo, cuál fue el último cambio, cuántos accionistas hay hoy y cuánto tiene el mayor.\n3. **Estructura vigente.** Una barra grande al 100 %, con cada accionista en su color, sus acciones y su porcentaje.\n4. **Línea de tiempo.** Cada cambio (constitución, aumento de capital, cesión) con su fecha, una barra que muestra cómo quedó el reparto en ese momento y un enlace \"Ver en la página\" que abre la escritura con el pasaje resaltado. Cada accionista mantiene el mismo color en toda la historia, así se ve quién entra, quién sale y quién crece.\n5. **Control de la persona de CGE.** Cualquier paso se puede excluir si la lectura se equivocó; la historia se recalcula y la exclusión queda en la trazabilidad.\n6. **Alertas.**\n   - Porcentajes que no suman 100 %.\n   - Alguien que cede acciones sin haber aparecido antes como accionista (falta una escritura en la cadena).\n   - Una sociedad como dueña final sin anexo de beneficiarios.\n   - Último cambio de hace más de 5 años.\n7. **Conexión con los cruces.** La estructura de hoy se compara con el Conoce a su cliente y la solicitud (todos los accionistas) y con el FEIC (solo los de 10 % o más, que es lo que el FEIC declara).\n\nPara verlo sin gastar lecturas, abre el expediente de prueba y entra a la escritura: trae tres cambios ficticios entre 2007 y 2021. Probé la reconstrucción, las exclusiones y las alertas en código [Seguro]. La lectura real de una escritura escaneada depende de qué tan legible esté cada página [Probable]: confirma cada paso en la página que indica.\n\nPendiente de tu lado: correr la lectura completa sobre la escritura de tu captura y decirme si la línea de tiempo coincide con lo que encontraría la analista."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Ubicar los puntos exactos para la historia accionaria"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer la línea exacta de comparación de listas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Agregar la historia accionaria: lectura de todas las páginas por lotes, línea de tiempo, gráficos y alertas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar la historia accionaria con el expediente de prueba y casos de alerta"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          },
+          {
+            "nombre": "Artifact"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar la alerta de escritura antigua"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 12,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-17T15:35Z",
+      "usuario": [
+        {
+          "texto": "Me gustaría que se pudiera ajustar el tamaño de las hojas para que se tuviera que desplazar con una barra lateral. Si no que sea más funcional: que tenga la posibilidad de que tenga solo el cursor, una herramienta para hacer zoom y para desplazarse al hacer zoom. Si se puede desplazar manteniendo clic derecho estaría muy bueno y funcional, eso al momento de haber hecho zoom . \n\nTambién me gustaría que se pueda editar el pdf, es decir que se pueda subrayar más que nada y señalar el pdf.",
+          "adjuntos": [
+            "1794929479235_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: en tu captura el perfil dice Costa Rica, pero los documentos son de Guatemala (declaración de la SAT y FEIC). Con ese perfil la herramienta no carga el checklist de Guatemala y usa el IVA y los montos de Costa Rica, así que los cálculos y el inventario salen mal [Seguro].\n\nAgregué un aviso para eso: si los documentos son propios de un país (FEIC o patentes de Guatemala, permiso de operaciones de Honduras) y el perfil dice otro, la herramienta lo marca y ofrece un botón para cambiar al país correcto.\n\n## Visor nuevo\n\n1. **Tamaño de la hoja.** Por defecto la página se ajusta para verse completa, sin barra de desplazamiento. Con \"Ancho\" ocupa todo el ancho del visor, y con − y + acercas o alejas; el porcentaje queda a la vista.\n2. **Herramientas.** Cursor (no cambia nada), Mano (arrastras para moverte) y Lupa (un clic acerca en ese punto; Mayús + clic aleja).\n3. **Zoom con la rueda.** Ctrl + rueda acerca o aleja manteniendo fijo el punto donde está el cursor.\n4. **Moverte con clic derecho.** Mantienes el clic derecho (o la rueda presionada) y arrastras, con cualquier herramienta activa; el menú del clic derecho no aparece dentro del visor.\n5. **Marcar el documento.**\n   - Resaltar: arrastras y queda un recuadro amarillo.\n   - Subrayar: arrastras y queda una línea roja debajo de lo marcado.\n   - Señalar: arrastras y queda un recuadro rojo.\n   - Borrar: quitas una marca con un clic sobre ella. Deshacer quita la última.\n6. **Descargar con marcas.** Genera un PDF nuevo con todas las páginas del documento y sus marcas. El archivo original no se modifica.\n7. **Trazabilidad.** La exportación registra cuántas marcas se hicieron en cada documento.\n\nProbé que la barra, las marcas, la descarga y el aviso de país se generen bien [Seguro]. Lo que depende del mouse (arrastrar, rueda, clic derecho) solo se puede comprobar en tu navegador: confírmame cómo responde.\n\nPendiente de verificar: que las marcas caigan exactamente donde arrastras en documentos escaneados con zoom alto."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer el código actual del visor para reemplazarlo"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Agregar herramientas del visor: cursor, mano, lupa, zoom con rueda, desplazamiento con clic derecho, resaltar, subrayar, señalar, borrar y descarga del PDF con marcas"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Validar sintaxis y que el visor genere la barra, las marcas y la trazabilidad"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          },
+          {
+            "nombre": "Artifact"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Verificar el aviso de país que no coincide"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 13,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-17T15:47Z",
+      "usuario": [
+        {
+          "texto": "Me gustaría que en este apartado exista un buscador en el documento cualquier término que se desee. \nEn el caso de escrituras y documentos que no tengan texto como tal, quiero que se pueda cambiar entre documento y transcripción. \nSi existe algún campo no legible, resaltalo y hazlo saber. \n\nTe adjunto un error",
+          "adjuntos": [
+            "1794930300631_image.png",
+            "1794930471312_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: el error de tu captura muestra que la IA puede inventar una ubicación. \"Emitido en agencia: No\" es una conclusión sobre todo el documento (no encontró sello de agencia), así que no hay un lugar que señalar; aun así la IA devolvió una caja, y caía fuera de la hoja [Probable]. Por eso las ubicaciones aproximadas nunca deben tomarse como prueba.\n\n## Error corregido\n\n1. Las ubicaciones que devuelve la IA ahora se validan: si caen fuera de la página o no tienen tamaño, se descartan; si se salen apenas del borde, se ajustan a la hoja.\n2. Las respuestas \"No\" de los campos Sí/No ya no llevan marca. Al seleccionarlas, el visor dice: \"Es una conclusión sobre todo el documento: no tiene una ubicación puntual\".\n\n## Buscador en el documento\n\nEn el panel de campos, arriba, hay un cuadro \"Buscar en el documento\":\n\n- No distingue mayúsculas ni tildes.\n- Dice cuántas coincidencias hay y en cuántas páginas, y lista las primeras 25 con un fragmento del texto alrededor.\n- Con las flechas, o con Enter y Mayús + Enter, recorres todas las coincidencias. El visor salta a la página y centra la coincidencia activa.\n- En PDF con texto, cada coincidencia se marca sobre la hoja en su lugar exacto.\n- Si el documento tiene más páginas de las cargadas (como tu estado de cuenta de 33, con 15 visibles), la herramienta lo avisa. El botón \"Cargar las 33 páginas\" carga el resto y repite la búsqueda.\n\n## Documento o transcripción\n\nJunto a la navegación hay dos botones: Documento y Transcripción.\n\n- **PDF con texto:** la transcripción es el texto del propio PDF, ordenado por líneas.\n- **Escrituras y escaneados:** el botón \"Transcribir con IA\" lee todas las páginas por lotes. Donde no se lee, escribe [ilegible], y donde se lee a medias, [dudoso]. La transcripción se puede seleccionar y copiar.\n- La transcripción también alimenta el buscador y la historia accionaria, así que en una escritura escaneada ya se puede buscar un nombre o un número de escritura.\n\n## Lo ilegible ahora se hace notar\n\n- Arriba de la tabla aparece un aviso rojo: \"N campos no se pudieron leer\", con un botón por campo que te lleva al punto en la hoja, marcado en rojo.\n- En la tabla, esas filas van en rojo y dicen \"No se pudo leer\"; nunca se muestra un valor inventado.\n- En la lista de documentos, esos hallazgos aparecen con la etiqueta \"Ilegible\" en lugar de \"Revisión\".\n- En la transcripción, cada [ilegible] va resaltado en rojo, cada página dice cuántos tiene y el aviso de arriba lista las páginas con partes ilegibles.\n\nProbé en código el buscador, las marcas de coincidencias, la transcripción, los ilegibles y la validación de ubicaciones con el expediente de prueba [Seguro]. Para probarlo sin gastar lecturas, abre el expediente de prueba y busca \"ejemplo\" en el Conoce a su cliente, o entra a la escritura para ver el notario ilegible.\n\nPendiente de verificar en tu navegador: transcribir una escritura escaneada real y confirmar que la búsqueda encuentra lo que la analista buscaría (nombres de accionistas, número de escritura)."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Confirmar los fragmentos exactos para el buscador, la transcripción y los ilegibles"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer las líneas exactas de nota y marca"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Agregar buscador, vista de transcripción, aviso de ilegibles y corregir las marcas fuera de la página"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Leer la función que genera las páginas de prueba"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Dar texto a las páginas de prueba y verificar buscador, transcripción, ilegibles y validación de cajas"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 14,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-17T16:18Z",
+      "usuario": [
+        {
+          "texto": "Este formulario que dice Conoce a tu cliente es un respaldo, no es parte del check list. Todo lo que diga \"Respaldo\" son documentos adicionales. \n\nYO SE que no tene sun checklist definitivo, pero no por eso tenes que andar cambiando nombres",
+          "adjuntos": [
+            "1794932197242_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [],
+        "nota": "La transcripción guardada no registra texto visible del asistente en este turno (solo llamadas a herramientas).",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Confirmar los fragmentos para tipos de respaldo, nombres oficiales y sugerencias de la IA"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Confirmar los fragmentos exactos"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 15,
+      "fuente": "transcripcion_guardada",
+      "fecha_utc": "2026-11-17T16:25Z",
+      "usuario": [
+        {
+          "texto": "Al momento de pedir una transcripción no hay un botón legible\n\nEn la ventana de revisión de documentos necesito que haya un apartado para agregar hallazgo/revisión por parte del analista",
+          "adjuntos": [
+            "1794932371776_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: los nombres cambiados eran míos, no de tus documentos. Yo había renombrado varios (\"Identificación del representante\", \"Registro tributario\", \"Buró: carta e informes\") y había usado \"Conoce a su cliente\" en lugar de \"Conoce a tu cliente\". Además, la lectura con IA reasignaba el tipo de un archivo por su cuenta. Las dos cosas quedaron corregidas.\n\n¿Los analistas van a registrar todo lo que encuentren en el apartado nuevo? Esos hallazgos son lo que la herramienta no detectó, y son la única forma de medir cuánto se le escapa. Si cada uno los anota a su manera, o no los anota, esa medición no existe.\n\n## Nombres y respaldos\n\n1. **El nombre del archivo manda.** En la lista de documentos, el título es el nombre del archivo tal como viene; debajo, en pequeño, va el tipo con que se clasificó.\n2. **Nombres oficiales.** Los tipos usan los nombres de la matriz de orden de escaneo y del checklist: \"Formulario Conoce a tu cliente\", \"DPI / pasaporte del R.L.\", \"RTU de la empresa y R.L.\", \"Carta de buró e Infornet - TransUnion\". Cambian con el país: en Honduras dice \"DNI\" y \"RTN\", en El Salvador \"DUI\" y \"Matrícula\" [Probable: tomados de la matriz que vi en la primera reunión].\n3. **Respaldos.** Todo archivo cuyo nombre dice \"Respaldo\" queda como documento adicional, en un grupo aparte de la lista:\n   - No cuenta para el checklist.\n   - No se le extraen campos ni genera hallazgos automáticos, y \"Leer con IA\" lo salta.\n   - Se puede ver, buscar, transcribir y anotar.\n4. **La IA ya no cambia el tipo.** Si cree que un archivo es otra cosa, lo muestra como sugerencia (\"La IA cree que es…\") con un botón \"Usar ese tipo\"; la decisión es tuya. Solo clasifica por su cuenta los archivos cuyo nombre no permite identificarlos.\n5. **Datos generales.** Agregué \"Datos generales\" como documento propio, para que no se confunda con el Conoce a tu cliente. Si llega firmado y sin firmar, la herramienta marca las dos versiones y recuerda usar la firmada.\n\n## Botón de transcripción\n\nDentro de la hoja blanca el botón quedaba oscuro sobre oscuro. Ahora es azul con texto blanco, y gris cuando está transcribiendo.\n\n## Hallazgo o revisión del analista\n\nEn el panel derecho de cada documento hay un apartado nuevo:\n\n- Eliges el nivel (Crítico, Regular o Revisión) y el apartado: un campo del documento, \"General\" u \"Otro\".\n- Escribes qué encontraste y qué se debe hacer; se guarda en la página donde estás.\n- Si antes señalaste la zona con Resaltar o Señalar, el hallazgo queda vinculado a esa marca, y al hacer clic sobre él la vista va directo a ese punto.\n- Sale en Hallazgos con origen \"Analista\", ya confirmado. Si es Crítico o Regular, también sale en las correcciones para el ticket.\n- La trazabilidad cuenta cuántos hallazgos agregó CGE.\n\nProbé en código los respaldos, los nombres por país, la sugerencia de la IA y los hallazgos del analista, incluido uno vinculado a una marca y otro sobre un respaldo [Seguro]. Vuelve a cargar el expediente para que se reclasifiquen los archivos.\n\nPendiente de confirmar: si la lista de nombres oficiales coincide con la que usa CGE hoy. Si hay diferencias, pásame la matriz de orden de escaneo actual y la cargo tal cual."
+        ],
+        "nota": "",
+        "herramientas_usadas": [
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Respaldos como documentos adicionales, nombres oficiales, la IA solo sugiere tipos, botón legible y hallazgos del analista"
+          },
+          {
+            "nombre": "bash_tool",
+            "descripcion": "Probar respaldos, nombres oficiales y hallazgos del analista"
+          },
+          {
+            "nombre": "Artifact",
+            "ruta": "/mnt/user-data/outputs/preclasificador-cge.html"
+          }
+        ]
+      }
+    },
+    {
+      "turno": 16,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-17T18:03Z",
+      "usuario": [
+        {
+          "texto": "Quiero que en el apartado de cruces, cuando me sobreponga en el campo me pueda mostrar un tooltip del documento con la ubicación del campo.\n\nTambién que haya un apartado para añadir nuevos cruces para verificar más campos repetidos y coincidencias que la herramienta no tomó en cuenta. \n\nAdicional necesito que en esa imagen que te compartí, reemplaces el apartado de correcciones y lo coloques como botón",
+          "adjuntos": [
+            "1794938609237_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: los cruces y campos nuevos se guardan en el navegador de quien los crea. Si una analista agrega un cruce, las demás no lo ven, y su lista de correcciones pedirá cosas que la de otras no pide. Para que todo el equipo use los mismos cruces hay que guardarlos en un lugar compartido.\n\n¿Quién debería aprobar un cruce nuevo? Un cruce genera hallazgos Regulares que llegan a Comercial como correcciones. Para los criterios flexibles ya definiste que aprueban los jefes de CGE; si los cruces no siguen la misma regla, cada analista estaría creando su propio checklist.\n\n## Lo que cambió\n\n1. **Vista previa en Cruces.** Al pasar el cursor sobre cualquier fila, incluida la del documento ancla, aparece una ventana flotante con un recorte de la página, centrado en el dato y resaltado en amarillo (en rojo si es ilegible). Debajo dice el archivo, la página, el valor leído y si la ubicación es exacta o aproximada. Funciona también al moverte con el teclado, y con clic sigues abriendo el documento resaltado.\n2. **Agregar cruce.** Al final de la pestaña Cruces hay un formulario:\n   - Nombre del dato y forma de comparar: idéntico con puntuación, mismo texto sin importar mayúsculas ni tildes, mismos dígitos, mismo teléfono, mismo número o monto, misma fecha o misma lista de nombres.\n   - Eliges documento y campo. El primero que añades es el ancla; los demás se comparan contra él.\n   - Si el dato todavía no existe en la herramienta, eliges \"Campo nuevo\" y le pones nombre. Se agrega a ese documento y la IA lo lee la próxima vez que pulses Leer con IA o Volver a leer.\n   - Los cruces agregados se marcan \"agregado por CGE\", se pueden quitar y se registran en la trazabilidad.\n3. **Correcciones como botón.** La pestaña desapareció. En el panel de cada documento, junto a \"Volver a leer este documento\" (donde marcaste en verde), está el botón \"Correcciones para el ticket (N)\". Abre una ventana con la lista en bloques para copiar y la descarga de trazabilidad, sin salir de la revisión; se cierra con Cerrar, con Esc o haciendo clic fuera.\n\nProbé en código la generación de las vistas previas, el cruce agregado con su campo nuevo y el botón [Seguro]. El comportamiento del cursor solo se puede ver en tu navegador: confírmame que la vista previa no tapa lo que necesitas ver.\n\n## Dudas abiertas\n\n1. ¿Los cruces nuevos deben pasar por aprobación de los jefes de CGE antes de aplicarse, igual que los criterios flexibles? Si sí, los paso a un registro compartido con campo de aprobación."
+        ],
+        "resumen_de_acciones": [
+          "Releyó la vista de cruces de la herramienta web",
+          "Aplicó un parche: ventana flotante con recorte del documento al pasar el cursor en Cruces, formulario para agregar cruces y campos nuevos, y botón de correcciones",
+          "Probó en código el generador de vistas previas, los cruces agregados y el botón",
+          "Publicó la nueva versión del artefacto"
+        ]
+      }
+    },
+    {
+      "turno": 17,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "No hay necesidad de autorizar un cruce, es un proceso cotidiano normal",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: sin aprobación, el riesgo que queda no es de control sino de consistencia. Mientras los cruces se guarden en el navegador de cada persona, cada analista tendrá su propia lista y sus correcciones no van a coincidir.\n\nQueda así: los cruces se agregan libremente, sin aprobación. Hoy no hace falta tocar nada, porque la herramienta solo la usas tú.\n\nCuando la abras a las analistas, el siguiente paso es guardar los cruces y campos agregados en un registro compartido de la herramienta. Así, el cruce que agregue una aparece para todas, con quién lo creó y cuándo. Cuando llegue ese momento, avísame y lo configuro."
+        ],
+        "resumen_de_acciones": []
+      }
+    },
+    {
+      "turno": 18,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-17T20:44Z",
+      "usuario": [
+        {
+          "texto": "No quiero que me salgan en dos bloques las correcciones por limitación de carácteres. \nTal vez limitemos la cantidad de caracteres por inciso, pero no por el total del apartado \n\nLa barra lateral del recuadro de la derecha no se me hace necesario, reduce en 0.5 el tamaño de la font (Ej. de 10 a 9.5) o lo que sea necesario para que no tener la barra de navegación de abajo \n\nPor qué no me deja añadir este cruce?",
+          "adjuntos": [
+            "1794948271007_image.png",
+            "1794948301904_image.png"
+          ]
+        },
+        {
+          "texto": "",
+          "adjuntos": [
+            "1794948627841_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: las correcciones de tu primera imagen son de un caso de El Salvador revisado con el perfil de Guatemala (la dirección dice San Salvador). Por eso salieron como faltantes el FEIC y la patente de sociedad, que en El Salvador no existen. También las diferencias de cálculo: 5,222.12 contra 5,175.91 es exactamente 1.13 / 1.12, la diferencia entre el IVA de El Salvador (13 %) y el de Guatemala (12 %) [Seguro]. Ahora la herramienta detecta el país también por la dirección y avisa cuando el perfil no coincide.\n\n## Por qué no se agregaba el cruce\n\nEl segundo campo que intentaste añadir era el mismo que el ancla: Carta accionaria · Accionistas y porcentajes. Después de añadir el ancla, el formulario se quedaba en el mismo documento, y el botón \"Agregar cruce\" no se activa hasta tener dos campos distintos. Ahora:\n\n- El mensaje explica que ese campo ya es el ancla y que elijas otro documento.\n- Después de añadir el ancla, el selector salta solo a otro documento con un campo parecido.\n- Aparecen botones con los campos parecidos de otros documentos. Para tu caso: FEIC (accionistas), Conoce a tu cliente (socios), Escritura, Anexo de beneficiarios y Solicitud de crédito.\n- La forma de comparar se sugiere sola según el dato. Para accionistas queda \"Misma lista de nombres\"; con \"Idéntico, con puntuación\", una lista con los mismos socios en otro orden saldría como error.\n\n## Correcciones para el ticket\n\n1. **Un solo bloque.** Ya no se parte por el total de caracteres. El límite ahora es por línea: 250 por defecto y ajustable. Las líneas que lo superan se recortan con \"…\", y el aviso dice cuántas se recortaron; el detalle completo queda en Hallazgos.\n2. **Líneas más simples para Comercial.** Las fórmulas salieron de la lista y pasaron al detalle de Hallazgos. Por ejemplo: \"COTIZACIÓN ARREND: Pago inicial: Dice 56,971.32; con las condiciones de la hoja de negociación debería ser 56,917.32\". Los faltantes dicen \"FEIC: Falta el documento.\" en lugar de repetir el nombre.\n3. **Espacios.** Una diferencia solo de espacios ya no es corrección. En tu imagen, la dirección \"SAN SALVADOR, SAN SALVADOR\" contra \"SAN SALVADOR,SAN SALVADOR\" había salido como Regular dos veces.\n\n## Panel derecho\n\nBajé la letra de 13.5 a 13, fijé el ancho de las columnas para que los textos largos bajen de línea y puse en una sola columna los formularios del panel (hallazgo del analista, cruces). Esos formularios eran los que empujaban el ancho y generaban la barra de abajo.\n\nProbé en código el bloque único, el recorte por línea, las sugerencias del cruce y la detección de El Salvador por la dirección [Seguro]. Lo visual del panel confírmalo en tu pantalla.\n\n## Dudas abiertas\n\n1. ¿Cargo el checklist de El Salvador con el archivo que me pasaste? Hoy, al cambiar el perfil a El Salvador, la herramienta dice \"checklist no cargado\" y solo hace cruces."
+        ],
+        "resumen_de_acciones": [
+          "Aplicó un parche: lista de correcciones en un solo bloque con límite de caracteres por línea (250 por defecto, ajustable)",
+          "Redujo la letra del panel derecho y fijó el ancho de las columnas para quitar la barra horizontal",
+          "Las diferencias solo de espacios dejaron de ser error; se agregó detección del país por la dirección y aviso cuando no coincide con el perfil",
+          "Formulario de cruces: mensaje claro, salto automático a otro documento y sugerencias de campos parecidos; la forma de comparar se sugiere sola",
+          "Probó en código y publicó el artefacto"
+        ]
+      }
+    },
+    {
+      "turno": 19,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-17T20:53Z",
+      "usuario": [
+        {
+          "texto": "También me gustaría añadir un tooltip para este apartado para que sepan verídicamente de donde salen los campos",
+          "adjuntos": [
+            "1794948782303_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: en tu captura, el \"IVA desplegado en el precio del bien\" da 0.168. Para un vehículo 2026 en Guatemala debería dar 0.12, así que el total o el valor del bien de la cotización se leyó mal, o la cotización suma algo más al total [Probable]. Ese dato alimenta todos los cálculos de abajo.\n\nAgregué una alerta para ese caso: si el IVA que resulta de la cotización no es 0 ni el IVA del país, sale un hallazgo de Revisión que pide revisar esos dos montos o el país del perfil.\n\n## Ventanas en \"De dónde sale\"\n\n1. **Datos que vienen de un documento.** Al pasar el cursor se ve el recorte de la página con el dato resaltado, el archivo, la página, el valor leído y si la ubicación es exacta o aproximada; con clic se abre el documento ahí. Lo mismo funciona en la columna \"Documento\" de la tabla de cálculos.\n2. **Datos que no vienen de un documento.** Quedan subrayados con puntos y la ventana explica de dónde salen:\n   - **IVA del país:** de la tabla «IVA por país» del reporte diario de revisión de CGE.\n   - **IVA desplegado del bien:** la operación con los dos montos de la cotización, por ejemplo 250,000.00 ÷ 250,000.00 − 1 = 0.000, y qué debería dar en un usado y en un nuevo.\n   - **Cargo de dispositivo y GPS, y cuota de GPS:** de las revisiones grabadas (Guatemala: 1,116.50 + 269.50 = 1,386; Honduras: 4,950, cuadrado contra una cotización), marcados como por confirmar con CGE.\n   - **Traspaso:** de la tabla «Gastos de traspaso nivel regional» del reporte diario.\n   - **Datos que valen 0 o faltan:** en qué documentos y campos se buscaron sin encontrarlos.\n   - **Datos editados a mano:** que los escribió la persona de CGE y cuál era el valor automático.\n\nProbé en código las 18 ventanas con vista de documento, las 7 explicativas y la alerta del IVA [Seguro]. El comportamiento del cursor confírmalo en tu pantalla."
+        ],
+        "resumen_de_acciones": [
+          "Agregó ventanas flotantes en la columna \"De dónde sale\" de Cálculos: recorte del documento para los datos leídos y explicación en texto para los datos de política (IVA del país, cargo de dispositivo y GPS, traspaso, valores editados o ausentes)",
+          "Agregó la alerta de revisión cuando el IVA implícito del bien no es 0 ni el IVA del país",
+          "Probó en código y publicó el artefacto"
+        ]
+      }
+    },
+    {
+      "turno": 20,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-17T21:00Z",
+      "usuario": [
+        {
+          "texto": "Te pedí lo de os hallazgos lo movieras aquí, eso de correcciones para el ticket no te lo pedí",
+          "adjuntos": [
+            "1794949217735_image.png",
+            "1794949245314_image.png",
+            "1794949261692_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: interpreté mal tu pedido anterior. Moví las correcciones cuando lo que querías en ese lugar era el apartado de hallazgos del analista. Ya quedó como lo pediste.\n\n1. **Botón \"Hallazgo del analista\".** Está junto a \"Volver a leer este documento\", en el lugar que marcaste en verde. Al pulsarlo se despliega ahí mismo, arriba de la tabla de campos, el formulario: nivel, apartado, qué encontraste y el vínculo con la marca de la página. Al volver a pulsarlo se cierra. El botón muestra cuántos hallazgos tuyos tiene ese documento, por ejemplo \"Hallazgo del analista (2)\", y el apartado ya no aparece al final del panel.\n2. **Correcciones para el ticket.** Volvió a ser una pestaña, como estaba. Conserva lo que ajustamos: un solo bloque, máximo de caracteres por línea y textos sin fórmulas.\n\nProbé en código que el botón abra y cierre el formulario arriba de la tabla y que la pestaña de correcciones funcione [Seguro]."
+        ],
+        "resumen_de_acciones": [
+          "Editó el artefacto con la acción de edición: botón \"Hallazgo del analista\" que despliega el formulario en el lugar marcado, arriba de la tabla de campos",
+          "Restauró la pestaña \"Correcciones para el ticket\"",
+          "Probó en código y publicó"
+        ]
+      }
+    },
+    {
+      "turno": 21,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-17T22:13Z",
+      "usuario": [
+        {
+          "texto": "TÚ TE EQUIVOCASTE EN ESE NOMBRE!!! Y estás diciendo que el nombre \"no coincide\" cuando TU transcripción es la no coincide",
+          "adjuntos": [
+            "1794953617555_image.png",
+            "1794953656105_image.png"
+          ]
+        },
+        {
+          "texto": "No lo ajustes porque se elimina el documento y la carga, solo anótala\n\nHazme un reporte técnico de todos estos aprendizajes en md",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: el error del nombre fue de la herramienta. La lectura del DPI invirtió los nombres del representante, y como el DPI es el ancla, los cinco documentos que estaban bien salieron como \"No coincide\". Lo grave no es la lectura en sí, sino que la herramienta confió en el ancla aunque todos los demás documentos coincidían entre sí y no con ella.\n\nNo lo ajusté, como pediste; quedó anotado como E12 en el reporte, con estado pendiente. El diseño de la corrección también está en el reporte:\n\n1. Leer nombres y apellidos por separado.\n2. Comparar nombres sin importar el orden: el mismo nombre en otro orden sale como Revisión, no como Regular.\n3. Aplicar una regla de consenso: si el ancla difiere de todos y los demás coinciden entre sí, sale un solo hallazgo de posible lectura errónea del ancla en lugar de cinco correcciones.\n\nTu decisión de no republicar deja ver otra necesidad: cada actualización de la herramienta borra el expediente cargado. Lo anoté como pendiente técnico: guardar el expediente en el navegador para que las correcciones no te obliguen a cargar y leer todo otra vez.\n\nEn reporte-tecnico-preclasificador-cge.md reuní:\n\n- El proceso observado: flujo, tiempos, volumen y reprocesos.\n- Los documentos ancla y las diferencias entre Guatemala y Honduras.\n- Las reglas y los conflictos entre checklist y práctica.\n- Las fórmulas comunes con los montos por país.\n- Las dos alarmas falsas humanas.\n- 15 aprendizajes de lectura con IA escritos como estrategias.\n- El registro de 20 errores con cómo se detectaron, cómo se corrigieron y su estado.\n- Los riesgos y sus controles, el estado de cada parte de la herramienta, y las consultas para CGE y los pendientes técnicos.\n\nEl reporte no lleva nombres de clientes ni de personas, ni montos de casos reales: los ejemplos numéricos son ficticios y solo aparecen montos de política."
+        ],
+        "resumen_de_acciones": [
+          "Escribió el reporte técnico y de aprendizaje en Markdown (reporte-tecnico-preclasificador-cge.md)",
+          "Presentó el archivo"
+        ]
+      }
+    },
+    {
+      "turno": 22,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "[Comentario de artefacto enviado a Claude]\nArtefacto: https://claude.ai/code/artifact/91574982-00fc-4c4f-9dff-78c53e798c8b\nHilo de comentarios: ee730773-4e7f-466e-8a20-aab4917d2127\nComentario: \"el nomnre es Fraterno José\"\nUbicación del comentario: celda \"JOSÉ FRATERNO VILA ARZÚ\" (primera fila de la tabla de cruces).",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Respondí en el hilo del comentario: confirmé que el nombre es Fraterno José y que, sin republicar la herramienta, puedes marcar como falsa alarma los cinco \"No coincide\" de ese cruce. También sumé al reporte técnico, en el error E12, que la analista pueda corregir a mano un valor leído."
+        ],
+        "resumen_de_acciones": [
+          "Leyó los comentarios del artefacto con la herramienta de artefactos",
+          "Respondió en el hilo del comentario con el texto indicado en \"respuesta_en_el_hilo\"",
+          "Agregó al registro de errores E12 del reporte técnico la mejora de permitir que la analista corrija a mano un valor leído"
+        ],
+        "respuesta_publicada_en_el_hilo_de_comentarios": "Correcto: el DPI dice FRATERNO JOSÉ (nombres) y VILA ARZÚ (apellidos); la lectura con IA los invirtió. Ese valor vive en tu sesión, no en el contenido de la página, y como pediste no republico para no borrar el expediente cargado. Mientras tanto, en la pestaña Hallazgos marca como \"Falsa alarma\" los cinco \"No coincide\" del cruce Representante legal (CR-06): salen de la lista de correcciones y quedan registrados como alarmas falsas para la medición. Quedó anotado como E12 en el reporte técnico, con su corrección para la próxima publicación: leer nombres y apellidos por separado, comparar nombres sin importar el orden, aplicar una regla de consenso cuando el ancla difiere de todos los demás y permitir que la analista corrija a mano un valor leído."
+      }
+    },
+    {
+      "turno": 23,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-18T17:31Z",
+      "usuario": [
+        {
+          "texto": "Esta es la reunión de la revisión del prototipo. Necesito que veamos los pasos a seguir de la automatización, qué  camino se va a tomar, como se debe de hacer, limitantes y alcances. Revisa esto contro el gantt hecho en el otro chat (solo hay 1 chat más en este proyecto). \n\nLo que yo sé: \n\n* Nos vamos a enfocar en Guatemala únicamente de momento \n* CGE nos compartirá un entregable para tener algo tangible para entregar, quiero también hacer un propuesta \n* Vamos a ver de momento solo análisis de escrituras, PERO vamos a seguir haciendo más avances de la herramienta para ir pensando a futuro",
+          "adjuntos": [
+            "Revisión_Prototipo_de_Automatización_con_IA-20261117_152422-Grabación_de_la_reunión.mp4",
+            "Revisión_Prototipo_de_Automatización_con_IA.vtt"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: el cronograma del otro chat ya no refleja lo acordado. Supone un modelo completo, ensamblado y entrenado en la Reunión 8; la reunión redujo el alcance a escrituras de Guatemala y dejó claro que el entrenamiento es un ciclo largo (a Riesgos le tomó unos 70 casos llegar a 95 % de confianza). Además, los bloqueos reales (accesos, Claude Code, tiempo compartido con Riesgos) no aparecen en el cronograma.\n\n¿El entregable de CGE es una entrada o una salida? En la reunión se mezclaron las dos cosas [Seguro]. CGE va a entregar la lista de criterios: qué datos buscar y de qué documento sacarlos. Lo que esperan recibir es otra cosa: una hoja por expediente con cumple / no cumple, en rojo lo que se manda a corregir. Tu propuesta debería ser esa hoja de salida, construida sobre sus criterios.\n\n## Lo que se acordó\n\n| Tema | Acuerdo | Responsable |\n|---|---|---|\n| Alcance | Solo Guatemala, que concentra el 75 % de los casos; lo que entre de otros países sigue como hoy | Todos |\n| Primer módulo | Lectura de escrituras: accionistas, cambios de socios y de nombre, y datos básicos de la sociedad y el representante | Analista de datos |\n| Entrada | CGE entrega los puntos a buscar y de qué documento tomarlos | Encargado y jefe de CGE |\n| Salida | Hoja por expediente con cumple / no cumple; CGE se enfoca solo en lo rojo y lo amarillo | Analista de datos |\n| Método | Sesiones presenciales en CGE, una o dos por día desde esta semana, con el analista nuevo | Analista de datos y CGE |\n| Accesos | Escáner Ventas (no funciona), Claude Code (ticket abierto; requiere autorización de gerencia general) y accesos del analista nuevo | Gerencia de la Oficina de Proyectos |\n| Capacidad | Pasar lo de Riesgos al analista nuevo y definir con la Gerencia de Riesgos el tiempo compartido | Gerencia de la Oficina de Proyectos y jefe de BI |\n| Minuta | Compartirla antes de las 5 de la tarde del día de la reunión | Analista de datos |\n\n## Lo que salió en vivo\n\n1. **La regla de accionistas cambió [Seguro].** La herramienta mostró 50 / 50 sacado de la escritura, pero los accionistas vigentes son dos empresas con 99 % y 1 %, según el anexo 5. Regla de CGE: si los accionistas son empresas, la estructura se toma del anexo 5 (beneficiarios finales); si son personas individuales, de la escritura. Hoy la historia accionaria solo lee escrituras y carta accionaria; hay que sumar el anexo 5 como fuente de la estructura vigente.\n2. **El error del nombre se vio en vivo.** Es el E12 del reporte técnico. La gerencia lo tomó como parte del afinamiento, pero confirma que un dato ancla mal leído es lo que más daña la confianza.\n3. **Línea base para medir [Seguro].** El mes pasado CGE revisó 327 expedientes y encontró 410 inconsistencias, más inconsistencias que expedientes. Falta el tiempo promedio por expediente: se preguntó y no se respondió.\n4. **El caso que justifica el módulo.** Una escritura de más de 100 páginas, manuscrita, la leyeron varias personas durante horas para concluir que un accionista no estaba. Es el dolor que el primer módulo ataca.\n\n## El cronograma contra lo acordado\n\n| Elemento del cronograma | Qué dijo la reunión | Ajuste que propongo |\n|---|---|---|\n| Fase 1, reuniones 2 a 7: revisión de expedientes | Sigue, pero en sesiones presenciales diarias y solo con escrituras de Guatemala | Cambiar la cadencia: de una reunión por bloque a una o dos sesiones por día durante dos semanas |\n| Cruce con Riesgos y construcción del modelo (reuniones 2 a 7) | El modelo de Riesgos sirve de referencia de método (70 casos para 95 %), no de cruce técnico | Renombrarlo \"Construcción del módulo de escrituras\" |\n| Claude Code en la Reunión 7 | Sigue sin autorización y es necesario para versionar y corregir rápido | Convertirlo en dependencia con fecha límite; si no llega, se trabaja con la versión actual y su riesgo de perder lo cargado |\n| Reunión 8: ensamblaje, primera versión funcional y entrenamiento | Irreal para todo el expediente; posible para escrituras | Primera versión funcional = módulo de escrituras de Guatemala |\n| Entrenamiento (un solo punto) | Es continuo: 10 a 15 casos para una mejora notable, cerca de 70 para 95 % | Fila propia de entrenamiento por lotes, con meta de casos y de acierto |\n| Validación de departamentos y lanzamiento | Sin cambios de fondo | Antes del lanzamiento, un periodo de uso en paralelo: la analista revisa como siempre y compara con la herramienta |\n| Fase 4, mejora continua (vacía) | Seguir avanzando el resto de la herramienta sin compromiso de entrega | Llenarla con el resto de documentos de Guatemala y después otros países |\n| No existe | Accesos, capacidad, entregable de criterios de CGE | Agregar una fila de dependencias con dueño y fecha |\n\n## Camino propuesto\n\n**Paso 1. Esta semana: insumos y accesos.**\n- Recibir de CGE la lista de criterios para escrituras: qué dato, de qué documento y cuándo es rojo o amarillo.\n- Cerrar los accesos a Escáner Ventas y los del analista nuevo; seguir el ticket de Claude Code.\n- Hacer las primeras sesiones presenciales con escrituras reales de Guatemala.\n\n**Paso 2. Semanas 1 y 2: módulo de escrituras.**\n- Corregir lo que pesa en confianza: el E12 (nombres en otro orden, regla de consenso), la estructura vigente tomada del anexo 5 cuando los accionistas son empresas, y que el expediente cargado no se pierda al actualizar.\n- Construir la hoja de salida con datos de la sociedad (nombres actual y anteriores, constitución, registro, capital), historia accionaria, estructura vigente con su fuente, beneficiarios finales, representante y cruces con FEIC, Conoce a tu cliente y solicitud, todo en verde, amarillo y rojo y con la página de respaldo de cada dato.\n\n**Paso 3. Semanas 2 a 5: entrenamiento por lotes.**\n- Lote de 15 escrituras con la respuesta de la analista como referencia. Se mide si la estructura vigente acierta, cuántas alarmas falsas hay y cuánto tiempo se ahorra.\n- Ajustes, y luego lotes siguientes hasta acercarse a los 70 casos.\n\n**Paso 4. Uso en paralelo y validación.** CGE usa la hoja en casos reales sin dejar su revisión; cuando el acierto llega a la meta, se pasa a producción para escrituras de Guatemala.\n\n**Paso 5. En paralelo y sin compromiso: el resto de la herramienta.** Siguen avanzando inventario, cruces, cálculos y correcciones, que ya existen en pre alfa, para entrar en una segunda etapa.\n\n## Alcance y limitantes\n\n**Dentro del alcance:** Guatemala, persona jurídica; escritura de constitución y modificaciones, anexo 5 y carta accionaria; hoja de resultado con cumple / no cumple; cruce de accionistas, razón social y representante contra FEIC, Conoce a tu cliente y solicitud.\n\n**Fuera, por ahora:** otros países, el resto de documentos como entregable comprometido, la aprobación automática de casos, la integración con Hive o FIMS y la comparación de firmas.\n\n**Limitantes:**\n\n| Limitante | Efecto | Estrategia |\n|---|---|---|\n| Un solo recurso, compartido con Riesgos y con prioridad para Riesgos | El avance depende de una persona | Pasar Riesgos al analista nuevo; acordar con la Gerencia de Riesgos bloques fijos de tiempo para CGE |\n| Accesos pendientes (Escáner Ventas, Claude Code, analista nuevo) | Sin casos reales no hay entrenamiento | Fecha límite y responsable para cada uno; mientras tanto, entrenar con los casos que CGE comparta en las sesiones |\n| La herramienta pierde lo cargado al actualizarse | Cada corrección obliga a cargar y leer de nuevo | Guardar el expediente en el navegador; acumular correcciones y publicarlas al cerrar un caso |\n| Escrituras largas, manuscritas o escaneadas | Lectura aproximada y riesgo de errores como el del nombre | Lectura de todas las páginas por lotes, página de respaldo de cada dato y revisión de la analista en lo amarillo |\n| Criterio cualitativo de CGE | La IA es blanco o negro | Criterios escritos por CGE, criterios flexibles aprobados por los jefes y hallazgos del analista para medir lo que se escapa |\n| Gobernanza: los datos van al proveedor de la IA y Sistemas evalúa otro programa | El camino de plataforma puede cambiar | No dar por resuelta la plataforma; mantener las reglas y criterios separados de la herramienta para poder moverlos |\n| CGE en temporada alta | Poca disponibilidad para sesiones | Sesiones cortas en el puesto de la analista, viendo su trabajo real |\n\n## Propuesta para presentar\n\nUna página con tres partes:\n\n1. **La hoja de resultado por expediente:** el diseño de salida descrito en el paso 2.\n2. **El plan de entrenamiento por lotes,** con metas: estructura vigente correcta en el 95 % de 70 casos, y tiempo de lectura de escrituras medido antes y después.\n3. **Las dependencias con dueño y fecha.**\n\nAsí CGE ve qué recibe, cuándo y qué necesita aportar.\n\nPendientes de tu lado: confirmar si la minuta salió el día de la reunión; si no, puedo armarla con el formato oficial de minutas de Arrend a partir de esta transcripción.\n\n¿Quieres que actualice el cronograma del otro chat con estos ajustes y arme la propuesta? Si sí, dime el formato que prefieres para la propuesta: documento de Claude, Word o presentación."
+        ],
+        "resumen_de_acciones": [
+          "Midió la grabación y limpió la transcripción de la reunión del prototipo (7 voces, 47 min 52 s)",
+          "Buscó el otro chat del proyecto y leyó el cronograma (artefacto \"Cronograma · Proyecto de automatización CGE\") para compararlo",
+          "Leyó la transcripción completa y guardó notas internas"
+        ]
+      }
+    },
+    {
+      "turno": 24,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-18T18:50Z",
+      "usuario": [
+        {
+          "texto": "De momento voy a pasarte más aprendizajes de países ya que tenía porque ya los había grabado antes del cambio así que solo hay que documentarlos y luego aterrizamos con nuevo cambio solicitado del desarrollo solo para Guate. \n\nVideos de El Salvador. Adjunto 4 videos con su respectiva transcripción, se hicieron en cortes de 25 minutos \n\nFalta un transcripción, puedes generarla tú con los videos? \n\nadjunto orden de los videos. Primero ordena y luego procesa",
+          "adjuntos": [
+            "Revisión_6_-_Automatización_CGE.vtt",
+            "Revisión_6_-_Automatización_CGE__1_.vtt",
+            "Revisión_6_-_Automatización_CGE__2_.vtt",
+            "Revisión_6_-_Automatización_CGE__3_.vtt",
+            "Revisión_6_-_Automatización_CGE__4_.vtt",
+            "Revisión_6_-_Automatización_CGE-20261118_090656-Grabación_de_la_reunión.mp4",
+            "Revisión_6_-_Automatización_CGE-20261118_092811-Grabación_de_la_reunión.mp4",
+            "Revisión_6_-_Automatización_CGE-20261118_095227-Grabación_de_la_reunión.mp4",
+            "Revisión_6_-_Automatización_CGE-20261118_101523-Grabación_de_la_reunión.mp4",
+            "Revisión_6_-_Automatización_CGE-20261118_104040-Grabación_de_la_reunión.mp4",
+            "Revisión_6_-_Automatización_CGE-20261118_110542-Grabación_de_la_reunión.mp4",
+            "1795027804618_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: la revisión de El Salvador explica el IVA de 16.8 % que viste en la calculadora. En El Salvador, el valor del bien de la cotización incluye el impuesto a la primera matrícula (IPM), así que el total entre ese valor no da 1.13. Restando el IPM, todas las cifras del caso cuadran con las fórmulas comunes [Seguro: verificado con los montos que la analista calculó en pantalla].\n\n## Orden de los videos\n\nEran seis videos y cinco transcripciones. Los emparejé por la duración de cada uno:\n\n| Parte | Video | Transcripción |\n|---|---|---|\n| 1 | 09:06 (20:42 min) | No tenía: la generé yo |\n| 2 | 09:28 (23:50 min) | Revisión_6_-_Automatización_CGE.vtt |\n| 3 | 09:52 (22:48 min) | (1) |\n| 4 | 10:15 (25:01 min) | (2) |\n| 5 | 10:40 (24:51 min) | (3) |\n| 6 | 11:05 (6:52 min) | (4) |\n\nLa transcripción de la parte 1 está en Revisión_6_-_Automatización_CGE__0_transcripcion_generada.vtt. La hice con un modelo de voz a texto de calidad media: el contenido se entiende bien, pero los nombres propios salen deformados y no distingue quién habla.\n\n## Lo que documenté\n\nActualicé reporte-tecnico-preclasificador-cge.md con una tabla de El Salvador y con los aprendizajes integrados en cada sección:\n\n1. **Orden y equivalencias:** del 1 al 12 (los números 2 y 4 no aplican), matrícula anual, credencial con plazo desde la inscripción, NIT homologado en el DUI para personas individuales, declaraciones mensuales, todo en mayúsculas.\n2. **Montos de El Salvador:** IVA de 13 %, cargo de dispositivo e instalación de 180 dólares, GPS fijo de 18 dólares y traspaso de 113 dólares.\n3. **IPM y placas:** cada vendor los maneja distinto, se confirma con el asesor, se restan del total antes de calcular y el flujo del IPM se valida por separado.\n4. **Tiempos:** caso completo de 1.5 a 2 horas, desglosado por documento; Comercial responde en promedio al día siguiente y en el peor caso en una semana.\n5. **Cuatro estrategias nuevas de lectura:**\n   - En el buró, identificar a cada persona por su número de documento, no por el nombre (apellido de casada contra apellido de soltera).\n   - Pedir el informe completo cuando dice \"página 6 de 7\".\n   - Pedir el buró faltante de un socio con más de 10 %.\n   - Verificar escrituras sin numeración por la continuidad del texto entre hojas.\n6. **Dos errores nuevos:** el E21 (la herramienta no maneja el IPM), anotado sin ajustar porque el foco es Guatemala, y el E22 (la transcripción faltante).\n\nDos hallazgos que refuerzan lo que ya teníamos:\n\n- La analista detectó en vivo correcciones que una revisora anterior no pidió: la página faltante del buró y el buró de un socio.\n- Al regresar un reingreso, compara a mano la versión nueva contra la anterior. Es la misma comparación de reingresos que tenemos pendiente.\n\nPendiente de tu lado: los videos de República Dominicana. Con esos cerramos la documentación de países y aterrizamos el cambio de desarrollo para Guatemala."
+        ],
+        "resumen_de_acciones": [
+          "Emparejó seis videos con cinco transcripciones por duración y hora de inicio",
+          "Instaló un modelo de voz a texto en el entorno y generó la transcripción de la parte 1 (162 intervenciones)",
+          "Unió las seis partes en orden y leyó las transcripciones completas",
+          "Guardó notas de El Salvador y actualizó el reporte técnico (tabla de El Salvador, estrategias, errores E21 y E22)",
+          "Presentó el reporte técnico y la transcripción generada"
+        ]
+      }
+    },
+    {
+      "turno": 25,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-18T21:45Z",
+      "usuario": [
+        {
+          "texto": "",
+          "adjuntos": [
+            "Revisión_4_-_Automatización_CGE.vtt",
+            "Revisión_4_-_Automatización_video_1.mp4",
+            "Revisión_4_-_Automatización_video_2.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: la revisión 4 es de Panamá y la hizo una revisora que ya trabaja en otra área. Ella misma dijo que no está al día y no pudo cuadrar los gastos iniciales ni explicar el \"bono cliente\". Lo que documenté de Panamá sirve como referencia, pero los cálculos deben validarse con el encargado de revisión antes de convertirlos en reglas.\n\nPanamá también rompe la idea de que la fórmula es igual en todos los países [Seguro]. Trabaja sobre el total del bien con ITBMS incluido, sin desglosarlo, y calcula la opción de compra sobre ese total; en Honduras y El Salvador se calcula sobre el valor sin impuesto. Seguro y GPS ya vienen con ITBMS en la cotización: el GPS de 18 dólares aparece como 19.26. La renta inicial sigue siendo coherente con la fórmula común si el valor sin impuesto se toma como total ÷ 1.07.\n\n## Lo que agregué a reporte-tecnico-preclasificador-cge.md\n\n1. **Tabla de Panamá:**\n   - El aviso de operaciones reemplaza al recibo para la dirección y trae dos números distintos: el RUC y el número de aviso.\n   - El pacto social debe ser el de constitución, y de ahí salen todas las fechas de constitución.\n   - Si la representación no indica plazo, es indefinida; de la cédula se pide solo el frente.\n   - En el negocio se suma el formulario de debida diligencia, y el cotizador manual exige además la propuesta Arrend.\n   - El 70 % al 85 % de las sociedades tienen un solo dueño.\n2. **Formatos del Conoce a tu cliente:** El Salvador, Honduras y Panamá comparten el formato antiguo de Guatemala, que en Guatemala ya no se recibe.\n3. **Cinco estrategias de lectura nuevas:**\n   - Un buró que dice \"la empresa no existe\" puede venir de una consulta mal hecha: en el caso, al RUC le faltaba un dígito.\n   - No confundir el RUC con el número de aviso de operaciones.\n   - Un correo o teléfono distinto entre documentos no es error: se registran ambos.\n   - Una proforma sin año se devuelve.\n   - Ante un vendor dudoso, se consulta a quien ingresa a FIMS.\n4. **Error E23:** la base de la opción de compra y el tratamiento del impuesto de seguro y GPS deben ser configurables por país. Lo anoté sin ajustar, porque el foco es Guatemala.\n5. **Conflicto corregido:** el cliente de cartera, según la regla de Riesgos, es el que tiene un año o más; Guatemala exime de declaraciones solo con más de dos años. Son dos umbrales distintos, no uno contradictorio.\n6. **Tres consultas nuevas para CGE:** el bono cliente con gastos iniciales financiados, si se pide comprobante de una hipoteca con atraso en el APC, y los dos umbrales de cliente de cartera.\n\nEn el caso aparecieron errores que se habían pasado en la revisión original:\n\n- La fecha de inicio de operaciones del Conoce a tu cliente no salió del pacto social.\n- El APC de la empresa se consultó con un RUC incompleto.\n- La cotización dice uso comercial mientras el checklist de seguro dice particular.\n\nLa revisora mencionó una sesión previa de República Dominicana; ese video es el que falta para cerrar los países."
+        ],
+        "resumen_de_acciones": [
+          "Midió los dos videos y leyó la transcripción de la revisión 4 (Panamá)",
+          "Actualizó el reporte técnico (tabla de Panamá, estrategias, error E23, conflicto de cliente de cartera, consultas)",
+          "Presentó el reporte técnico"
+        ]
+      }
+    },
+    {
+      "turno": 26,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Cuales países van? Solo dame la lista",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Documentados con revisión grabada:\n\n1. Guatemala\n2. Honduras\n3. El Salvador\n4. Panamá\n\nPendiente:\n\n1. República Dominicana"
+        ],
+        "resumen_de_acciones": []
+      }
+    },
+    {
+      "turno": 27,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-19T17:05Z",
+      "usuario": [
+        {
+          "texto": "",
+          "adjuntos": [
+            "Revisión_3_-_Automatización_CGE.vtt",
+            "Revisión_3_-_Automatización_video_1.mp4",
+            "Revisión_3_-_Automatización_video_2.mp4",
+            "Revisión_3_-_Automatización_video_3.mp4",
+            "Revisión_3_-_Automatización_video_4.mp4",
+            "Revisión_3_-_Automatización_video_5.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: la revisora de República Dominicana dijo textualmente que \"se necesita la parametrización de dónde sacar cada dato\". Es lo mismo que acordaron en la revisión del prototipo para Guatemala. Lo anoté como consulta para CGE, porque es la base del entregable de criterios que van a compartir.\n\nLa revisión 3 es de República Dominicana: cinco partes y 2 horas 40 minutos, con un caso de leasing financiero de un equipo de cocina de seis artículos. Con esto quedan documentados los cinco países con grabación.\n\n## Lo que agregué a reporte-tecnico-preclasificador-cge.md\n\n1. **Tabla de República Dominicana:**\n   - El registro mercantil concentra casi todo: denominación, RNC, fecha de constitución, representante y socios.\n   - La representación se toma como indefinida aunque el registro diga un plazo; es un criterio acordado con Legal.\n   - Los estatutos no tienen que ser los de constitución, pero se leen completos.\n   - El buró es solo TransUnion: moras sí, demandas no.\n   - Las cédulas de 2023 y 2024 se aceptan vencidas por un problema del registro civil.\n   - El Conoce a tu cliente siempre llega sin visita, con visto bueno de Riesgos.\n   - Los bancos cortan los estados de cuenta a mitad de mes.\n   - En el negocio se usa una propuesta en lugar de la cotización.\n2. **Cálculos:**\n   - Se confirma la fórmula común con ITBIS de 18 %.\n   - Hay tres variantes nuevas: gastos iniciales financiados en un flujo aparte, seguro que no se financia y valor residual igual a opción de compra más seguro, con ITBIS.\n   - Bien compuesto: el anexo se cruza artículo por artículo contra cada cotización vendor y la suma debe dar el monto a financiar.\n3. **Seis estrategias de lectura nuevas:**\n   - Representante extranjero sin acceso a su buró: se pide el buró del socio mayoritario.\n   - Cortes bancarios a mitad de mes: el mes se da por cerrado si cubre el periodo.\n   - Errores de documentos de terceros: no se atribuyen a Comercial, salvo la vigencia.\n   - Teléfonos y correos distintos entre documentos: se registran todos en FIMS.\n   - Beneficiario fiscal: solo del mismo país; un aval sí puede ser de otro país.\n   - Lo desconocido: se consulta con Legal y la respuesta queda como precedente.\n4. **Clientes ALD y AMS:** tienen un checklist propio sin información financiera ni beneficiarios.\n5. **Error E24:** la calculadora no modela gastos financiados, seguro aparte, valor residual ni bienes compuestos. Lo anoté sin ajustar, porque el foco es Guatemala.\n\nComo en los otros países, la revisora encontró en vivo un error que se había pasado: la fecha de asamblea constitutiva en la solicitud de crédito. Ya van cuatro países donde la revisión original dejó pasar algo."
+        ],
+        "resumen_de_acciones": [
+          "Midió los cinco videos y leyó la transcripción de la revisión 3 (República Dominicana)",
+          "Actualizó el reporte técnico (tabla de República Dominicana, cálculos, estrategias, error E24)",
+          "Presentó el reporte técnico"
+        ]
+      }
+    },
+    {
+      "turno": 28,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-19T17:10Z",
+      "usuario": [
+        {
+          "texto": "Falta el video 2. Intenta reconstruirlo según tu conocimiento. \"Imaginatelo\"",
+          "adjuntos": [
+            "Revisión_5_-_Automatización_video_1.mp4",
+            "Revisión_5_-_Automatización_video_3.mp4",
+            "Revisión_5_-_Automatización_CGE.vtt"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: no hizo falta imaginar el video 2. La transcripción cubre la sesión completa, de 0:00 a 1:35, y el video 2 corresponde a los minutos 30 a 60 de esa transcripción [Seguro]. Lo único que no tiene texto son dos tramos, de 43:59 a 48:39 y de 54:13 a 57:09. Por el contexto parecen pausas: antes la analista dice \"dale, dale\" y después retoma con \"Ahorita terminamos el madre\" y \"Seguimos\" [Probable].\n\nNo estoy de acuerdo con reconstruir contenido inventado, porque este reporte es la base de conocimiento del modelo pre clasificador: una regla imaginada se aplicaría a expedientes reales. En su lugar usé lo que sí existe. El riesgo de imaginarlo es que nadie podría distinguir después qué dijo CGE y qué supuse yo.\n\nAdemás, el video 3 que subiste está dañado: no abre porque el archivo quedó incompleto. Su contenido igual está en la transcripción.\n\n## Costa Rica en reporte-tecnico-preclasificador-cge.md\n\n1. **Tabla del país:**\n   - El orden del 1 al 10 incluye Credid, permiso de salud o sanitario, personería jurídica y la autorización SUGEF.\n   - No hay recibo: la dirección descriptiva del informe de visita debe repetirse igual en todos los documentos.\n   - Los socios salen de una declaración jurada.\n   - Cliente nuevo siempre presenta datos generales y solicitud firmados.\n   - La prima de la proforma no se suma al total a financiar.\n   - Si el bien es 4x2 o 4x4 y su combustible definen el correlativo y el tipo de vehículo en el checklist de seguro.\n2. **Cálculos:** el bien se cotiza sin impuesto, con los gastos de inscripción incluidos, y el 13 % solo se aplica a seguro, GPS y cargo del dispositivo (180 dólares). Los gastos iniciales siempre van financiados en un flujo aparte. Todas las cifras del caso cuadraron con esa lógica.\n3. **Cuatro estrategias nuevas:**\n   - Selfie de una persona distinta al asesor que figura como visitante: se devuelve, salvo nota que lo explique.\n   - Estados de cuenta de dos cuentas mezcladas: se ordenan por cuenta.\n   - Vendors que pertenecen a grupos con varias razones sociales: se deduce por el tipo de bien y se confirma con el asesor.\n   - Edad que no cuadra: revisar si el cumpleaños cayó entre la visita y la revisión.\n4. **Error E25:** la calculadora asume impuesto en el valor del bien. Lo anoté sin ajustar, porque el foco es Guatemala.\n\nEn este caso la analista encontró cuatro errores que la revisión original dejó pasar:\n\n- El plazo del Conoce a tu cliente no coincidía con la hoja.\n- Había una sola accionista con 100 % cuando eran tres.\n- La selfie era de otro asesor.\n- En la autorización SUGEF se marcó persona física para una sociedad.\n\nCon esto quedan documentados seis países: Guatemala, Honduras, El Salvador, Panamá, República Dominicana y Costa Rica. Nicaragua no aplica, porque CGE no opera ahí."
+        ],
+        "resumen_de_acciones": [
+          "Midió los videos (el video 3 no abre) y comprobó que la transcripción cubre la sesión completa salvo dos pausas",
+          "Actualizó el reporte técnico con Costa Rica (tabla, cálculos, estrategias, error E25)",
+          "Presentó el reporte técnico"
+        ]
+      }
+    },
+    {
+      "turno": 29,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Dame el recuento de casos y países que llevamos porfa",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: los seis casos son personas jurídicas nuevas con Leasing Financiero. No hay ningún caso de persona individual, de cliente de cartera ni de Leasing Operativo, y para Guatemala, que es el foco, hay un solo caso grabado.\n\n**6 casos en 6 países**, uno por país:\n\n| Revisión | País | Caso |\n|---|---|---|\n| 1 | Guatemala | Persona jurídica nueva, Leasing Financiero Usado, 1 negocio |\n| 2 | Honduras | Persona jurídica nueva, 3 negocios de camiones |\n| 3 | República Dominicana | Sociedad de responsabilidad limitada, Leasing Financiero de un equipo de cocina de 6 artículos |\n| 4 | Panamá | Sociedad de una sola accionista, Leasing Financiero |\n| 5 | Costa Rica | Sociedad anónima, Leasing Financiero de un vehículo |\n| 6 | El Salvador | Sociedad anónima de capital variable, Leasing Financiero |\n\nNicaragua no aplica, porque CGE no opera ahí."
+        ],
+        "resumen_de_acciones": []
+      }
+    },
+    {
+      "turno": 30,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-19T20:45Z",
+      "usuario": [
+        {
+          "texto": "Estos casos ya son de entrenamiento. \n\nNecesito que me hagas un reporte técnico y de aprendizaje (juntos en un mismo md) por cada país. \n\n* Quiero que vayas anotando las distintas estrategias que utilizan los analistas según sea el momento, documento, parte del checklist, etc.\n* Busca relaciones con /digitador-arrend con el conocimiento adquirido sobre estrategias de revisión de documentos y distintos checklists disponibles. Te adjunté un excel con los checklists de distintos países y documentación necesaria según sea el caso\n* También arma un orden sugerido de revisión y relación de documentos\n* documenta errores comunes, posibles y raros \n\n\nTe voy a pasar hasta la revisión 10, ve enbobedando todo los conocimientos según te lo solicité y despues de la revisión del 10, me esntregas esto. \n\nNecesito que pienses como un espcialista en automatizaciones de procesos con experiencia en gestión de expedientes voluminosos. \n\nDime cómo podemos estandarizar lo más que se pueda el proceso, cómo Claude entedería mejor los documentos de proceso\n\nDame el orden en que sugieres que se vean estas solicitudes en un md porfa como entregable de este chat",
+          "adjuntos": [
+            "Revisión_8_-_Guatemala.vtt",
+            "Revisión_8_-_Guatemala__1_.vtt",
+            "Revisión_8_-_Guatemala__2_.vtt",
+            "Revisión_8_-_Guatemala__3_.vtt",
+            "Revisión_8_-_Guatemala-20261118_141850-Grabación_de_la_reunión.mp4",
+            "Revisión_8_-_Guatemala-20261118_145307-Grabación_de_la_reunión.mp4",
+            "Revisión_8_-_Guatemala-20261118_152116-Grabación_de_la_reunión.mp4",
+            "Revisión_8_-_Guatemala-20261118_154920-Grabación_de_la_reunión.mp4",
+            "ORDEN_-_CHECKLIST_DE_ORDEN_DE_DOCUMENTACION_PARA_INGRESO_A_SCANNER_VENTAS.xlsx"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: la revisión 8 terminó sin correcciones; el revisor dijo que el caso estaba \"99 % bien\". Un caso limpio enseña el camino normal, pero no sirve para medir si la herramienta detecta errores. Para que las revisiones 9 y 10 entrenen de verdad, conviene que al menos una traiga correcciones y que me pases las correcciones reales de su ticket de Hive.\n\n## Revisión 8 guardada\n\nLa revisión 8 es de Guatemala: persona jurídica nueva con aval y crédito puente de maquinaria, unas 2 horas y 10 minutos. La guardé en la bodega con los demás aprendizajes. Lo más útil que dejó:\n\n- **El FEIC correcto acelera todo el caso.** Cuando viene bien, el revisor lo usa como fuente para validar el resto de formularios; si trae errores, no lo usa hasta que se corrijan.\n- **Documentos fuente abiertos.** El revisor deja abiertos patente, DPI, RTU, escritura, nombramiento y recibo, y cierra cada uno cuando ya no lo necesita.\n- **Aval igual a dos clientes.** El aval se revisa completo, con la misma documentación que el cliente; al beneficiario fiscal, en cambio, se le omiten información financiera, declaraciones y estados de cuenta.\n- **Nomenclatura de productos.** El código del FEIC (por ejemplo, leasing financiero en dólares) se cruza contra la tabla de nomenclaturas, que viene en el Excel de orden que me pasaste.\n- **Lo más laborioso.** Validar una escritura sin numeración, cláusula por cláusula, e identificar el bien cuando la cotización viene en otro idioma o hay varias cotizaciones.\n- **Una duda nueva para CGE.** El aval no traía Conoce a tu cliente y el revisor no supo si es una excepción permitida.\n\nEl Excel resuelve una de las consultas del correo a CGE: el traspaso en Guatemala es de Q1,835 tanto para vehículos como para motos. Además trae el cobro de dispositivo y GPS por país con IVA, las nomenclaturas de productos y el cálculo de Green Fleet con IVA escalonado para vehículos eléctricos.\n\n## Entregable de este chat\n\nEn plan-reportes-por-pais-y-estandarizacion.md está:\n\n- **El orden sugerido de las solicitudes:** primero las fichas por revisión, luego un catálogo maestro de datos, después Guatemala y al final los demás países.\n- **La estructura fija de cada reporte por país**, en 12 secciones.\n- **La ficha que llenaré con cada revisión.**\n- **Nueve propuestas para estandarizar el proceso:** la principal es parametrizar de qué documento sale cada dato, como pidieron las propias analistas.\n- **Nueve formas de que Claude entienda mejor los documentos de proceso:** la principal es convertir cada oración del checklist en reglas atómicas, cada una con un ejemplo ficticio.\n\nPendiente de tu lado: las revisiones 9 y 10. Después de la 10 te entrego los reportes por país."
+        ],
+        "resumen_de_acciones": [
+          "Emparejó los videos con las transcripciones y las unió en orden",
+          "Leyó la habilidad digitador-arrend (estructura, tabla de campos y reglas) para buscar relaciones",
+          "Extrajo el Excel de orden de documentación (hojas por tipo de cliente y producto, guía de CGE, cotizador Green Fleet)",
+          "Guardó la bodega de conocimiento con la revisión 8",
+          "Escribió plan-reportes-por-pais-y-estandarizacion.md y lo presentó"
+        ]
+      }
+    },
+    {
+      "turno": 31,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-19T20:54Z",
+      "usuario": [
+        {
+          "texto": "",
+          "adjuntos": [
+            "Revisión_9_-_Guatemala_.vtt",
+            "Revisión_9_-_Guatemala___1_.vtt",
+            "Revisión_9_-_Guatemala___2_.vtt",
+            "Revisión_9_-_Guatemala-20261119_092657-Grabación_de_la_reunión.mp4",
+            "Revisión_9_-_Guatemala-20261119_095050-Grabación_de_la_reunión.mp4",
+            "Revisión_9_-_Guatemala-20261119_101558-Grabación_de_la_reunión.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: la revisión 9 es el primer caso de reingreso que tenemos grabado. Confirma con evidencia lo que veníamos viendo: el revisor no se limita a verificar las correcciones del ticket, sino que compara todo el expediente contra la versión anterior para asegurarse de que no cambió nada más. Es la función que la herramienta todavía no tiene.\n\nUn detalle técnico: la transcripción de la primera parte salió en inglés ininteligible, porque el idioma se detectó mal. La volví a transcribir en español con un modelo de voz a texto. La calidad es media, pero alcanzó para documentar esa parte.\n\n## Lo que guardé de la revisión 9\n\nCaso de Guatemala: persona jurídica, Green Fleet (camioneta híbrida con blindaje), en quetzales y a 36 meses.\n\n1. **Vehículo híbrido exento de IVA:** el valor sin IVA es el total, no se divide entre 1.12; el blindaje sí lleva IVA. La calculadora de Guatemala hoy asume IVA en todo el bien, así que esto entra como regla nueva en el reporte.\n2. **Bien compuesto:** vehículo más blindaje, con dos cotizaciones vendor que se suman. Las descripciones deben nombrar el bien completo y al proveedor del blindaje. El flujo del blindaje no lleva opción de compra, porque se integra al vehículo.\n3. **Errores encontrados:**\n   - El IVA de la cotización del blindaje estaba mal calculado, por unos Q3 a Q5.\n   - La renta inicial venía como monto, con un porcentaje que no correspondía.\n   - La opción de compra no cuadraba.\n   - Las notas de la hoja de negociación estaban cortadas.\n   - En los documentos decía \"vehículo\" en lugar de \"camioneta\".\n4. **Escalamiento:** cuando los montos no cuadraron, el revisor llamó al encargado de revisión y, mientras esperaba, siguió con otras partes. El encargado lo resumió así: \"si tan solo nos hubieran puesto los comentarios en una hoja\". Las notas explicativas de Comercial deciden si un caso se puede revisar sin escalar.\n5. **Formatos nuevos:** en la composición accionaria se perdían letras. El revisor lo dejó como consulta, no como error de Comercial.\n\nYa van dos revisiones de entrenamiento guardadas en bodega-revisiones-entrenamiento.md. Pendiente de tu lado: la revisión 10; después te entrego los reportes por país."
+        ],
+        "resumen_de_acciones": [
+          "Midió los videos y unió las transcripciones",
+          "Detectó que la transcripción de la primera parte salió en inglés ininteligible y la volvió a transcribir en español con un modelo de voz a texto",
+          "Guardó la revisión 9 en la bodega de conocimiento"
+        ]
+      }
+    },
+    {
+      "turno": 32,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "[Comentario de revisión sobre plan-reportes-por-pais-y-estandarizacion.md]\nTexto resaltado: \"Estrategias de los analistas: agrupadas por momento (preparación de la carpeta, expediente madre, negocio, cálculos, cierre del ticket), por documento y por parte del checklist\"\n\nComentario: Estrategias, criterios que sucedieron en vivo, reglas, exepciones como \n* El analista de CGE tiene que confirmar el nombre e identidad del asesor, ya que a una IA se le dificultaria \n* Igual el vendor lo debe de certificar el analista\n\nEsto que sucedió en la revisión 5",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Ajusté el punto 6 de la estructura de los reportes en plan-reportes-por-pais-y-estandarizacion.md. Ahora se llama \"Estrategias, criterios en vivo, reglas y excepciones\", e incluye las validaciones que quedan en manos del analista, con los dos ejemplos de la revisión 5 de Costa Rica:\n\n- **Identidad del asesor:** la selfie era de otro asesor, y lo detectó una analista con experiencia porque conoce a los asesores del país. La herramienta puede comparar nombres entre documentos, pero no reconocer a una persona en una foto.\n- **Vendor:** un mismo grupo comercial tiene varias razones sociales, la proforma puede traer solo el logotipo y el nombre en FIMS puede no coincidir con el de la proforma.\n\nPara que el documento quede coherente, sumé esos dos ejemplos a la lista de \"revisión humana\" de la sección sobre cómo Claude entiende los documentos."
+        ],
+        "resumen_de_acciones": [
+          "Editó el punto 6 de la estructura de los reportes en plan-reportes-por-pais-y-estandarizacion.md",
+          "Sumó los dos ejemplos a la lista de \"revisión humana\" de la sección sobre cómo Claude entiende los documentos",
+          "Presentó el archivo"
+        ]
+      }
+    },
+    {
+      "turno": 33,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-19T21:08Z",
+      "usuario": [
+        {
+          "texto": "Espera a mi autorización para prodecer con el análisis que te pedí. De momento solo analiza esto  como lo venías ahaciendo",
+          "adjuntos": [
+            "Revisión_10_-_El_Salvador.vtt",
+            "Revisión_10_-_El_Salvador__1_.vtt",
+            "Revisión_10_-_El_Salvador__2_.vtt",
+            "Revisión_10_-_El_Salvador__3_.vtt",
+            "Revisión_10_-_El_Salvador-20261119_101410-Grabación_de_la_reunión.mp4",
+            "Revisión_10_-_El_Salvador-20261119_103648-Grabación_de_la_reunión.mp4",
+            "Revisión_10_-_El_Salvador-20261119_111049-Grabación_de_la_reunión.mp4",
+            "Revisión_10_-_El_Salvador-20261119_113737-Grabación_de_la_reunión.mp4"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: al final de la grabación de la revisión 10 viene un fragmento de otro caso, un reingreso de Guatemala de crédito puente que va a Junta Directiva. Lo guardé aparte dentro de la misma revisión, para no mezclar sus reglas con las de El Salvador.\n\n## Lo que guardé de la revisión 10 (El Salvador)\n\nEl caso es una persona jurídica nueva cuyos dos socios son empresas, con representante extranjero con pasaporte y leasing financiero de una panel en dólares a 48 meses. Lo nuevo:\n\n1. **Gasto inicial mínimo:** en El Salvador existe un gasto inicial mínimo de 250 dólares, más el dispositivo y la instalación de GPS (180 dólares) con IVA. La hoja traía solo el monto, sin el porcentaje, y la analista lo mandó a corregir.\n2. **Socios:**\n   - Se validan con el formulario F-915 de Hacienda.\n   - En la solicitud de crédito solo se listan los socios con 10 % o más.\n   - Si los beneficiarios finales del anexo 5 son de países donde Arrend no opera (en el caso, Estados Unidos y Francia), no se piden sus burós.\n3. **Credencial sin plazo:** si no indica plazo, la representación se toma como indefinida. La fecha que vale es la del registro de comercio, no la de emisión, y el notario aparece en el sello.\n4. **Buró:** si el cliente aparece en una demanda como demandante, no se pide nada; solo importa cuando es el demandado. Como el socio mayoritario y el representante son de Guatemala, se adjuntaron Infornet y TransUnion de Guatemala.\n5. **Cálculos:** cuadraron al centavo, con el IPM y las placas fuera del valor del bien y el traspaso de 113 dólares por negocio. El flujo trae tres flujos (bien, IPM y placas, gastos) más el consolidado.\n6. **Errores de Comercial encontrados:**\n   - Faltaba el parcial 2026 de la información financiera.\n   - El porcentaje de gastos iniciales del Conoce a tu cliente no correspondía al monto.\n   - Un nombre de administradora tenía un espacio de más.\n   - El año de la escritura de constitución estaba equivocado.\n   - El lugar de emisión del pasaporte estaba mal escrito.\n\nDel reingreso de Guatemala guardé tres reglas:\n\n- **Centavos en el crédito puente:** diferencias de 1 a 3 centavos se dejan pasar, porque las detecta FIMS; desde un quetzal se corrige.\n- **Casos de Junta Directiva:** no se ingresan a FIMS hasta que la Junta los aprueba, y después vuelven a CGE para una última revisión.\n- **Accesorios:** si el bien incluye accesorios, todos los documentos deben decir \"maquinaria industrial más accesorios\".\n\nLa bodega ya tiene las tres revisiones de entrenamiento: 8 y 9 de Guatemala y 10 de El Salvador. Quedo a la espera de tu autorización para armar los reportes por país."
+        ],
+        "resumen_de_acciones": [
+          "Midió los videos, unió las transcripciones y leyó la sesión completa",
+          "Guardó la revisión 10 en la bodega de conocimiento, con el fragmento del reingreso de Guatemala aparte"
+        ]
+      }
+    },
+    {
+      "turno": 34,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Genérame los documentos que te solicité, pero sé un armador estratégico, sabio y potente como Fable, saca tus mejores cualidades del modelo par fabricar este paso que es muy importante\nHaceme un apartado en otro MD sencillo que contenga un sección como la de riesgos que son módulo como objeto de financiamiento que es el 1 para identificar qué documentos tanto necesrios como innecesarios van. ",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Toma en cuenta: los seis reportes no tienen el mismo respaldo. Guatemala se apoya en tres casos y un fragmento y El Salvador en dos; Honduras, Panamá, Costa Rica y República Dominicana, en un solo caso cada uno. En esos cuatro, la clasificación de errores en comunes, posibles y raros es provisional, y cada reporte lo advierte. En Panamá, además, la revisora ya no trabaja en el área y no pudo cuadrar parte de los cálculos.\n\n## Lo que entregué\n\n**Seis reportes por país**, todos con las mismas 12 secciones:\n\n1. Resumen\n2. Fuentes\n3. Documentos por tipo de cliente y producto\n4. Catálogo de datos con el documento que manda\n5. Orden de revisión (el del checklist, el real y el recomendado para la herramienta)\n6. Estrategias, criterios en vivo, reglas y excepciones\n7. Reglas, conflictos y precedentes\n8. Cálculos con ejemplos ficticios\n9. Errores comunes, posibles y raros\n10. Relación con `digitador-arrend`\n11. Qué automatizar y qué dejar a la persona\n12. Dudas para CGE\n\nEl archivo principal es reporte-guatemala.md. Los cinco aprendizajes que lo ordenan:\n\n- **FEIC:** es el documento ancla; cuando viene correcto, el resto del caso se valida mucho más rápido.\n- **Accionistas:** la estructura vigente sale de la escritura si son personas y del anexo 5 si son empresas.\n- **Reingreso:** se revisa completo contra la versión anterior, no solo las correcciones pedidas.\n- **Impuesto:** depende del bien. Un usado de 2024 o anterior no lleva IVA en el precio, el híbrido está exento, el blindaje lleva IVA y el eléctrico tiene IVA escalonado.\n- **Notas de la hoja de negociación:** deciden si el caso se puede revisar sin escalar al encargado.\n\n**Un documento de módulos**, modulos-y-documentos.md, con siete módulos. Cada uno separa los documentos en necesarios, según el caso y no necesarios, con las diferencias por país y la equivalencia con los módulos de Riesgos.\n\n## Dos decisiones mías que debes validar\n\n1. **Numeración de los módulos.** Dejé \"Objeto de financiamiento\" como módulo 1, igual que en Riesgos, pero numeré el resto del 2 al 7 de corrido, porque CGE revisa representación y accionistas como un bloque propio que Riesgos no tiene. En Riesgos los números son 1, 2, 5, 6 y 7; la tabla final muestra la equivalencia.\n2. **Lista de \"no necesarios\".** Sale de lo que los analistas dijeron en las grabaciones. Antes de que la herramienta la use para dejar de pedir algo, la tienen que aprobar los jefes de CGE.\n\nLos reportes no llevan nombres de clientes ni de personas, ni montos de casos reales.\n\nQueda pendiente el último paso del plan: la propuesta de estandarización para CGE, como documento aparte.\n\n¿Prefieres que los módulos de CGE usen exactamente la misma numeración que Riesgos (1, 2, 5, 6, 7), aunque queden números sin usar?"
+        ],
+        "resumen_de_acciones": [
+          "Revisó el Excel de orden de documentación y los nombres de los módulos del digitador de Riesgos",
+          "Escribió seis reportes técnicos y de aprendizaje por país en reportes-por-pais/ (Guatemala, Honduras, El Salvador, Panamá, Costa Rica, República Dominicana)",
+          "Escribió modulos-y-documentos.md (siete módulos con documentos necesarios, según el caso y no necesarios)",
+          "Presentó los siete archivos"
+        ]
+      }
+    },
+    {
+      "turno": 35,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Ahora necesito que convirtamos esto en un plugin que sea 'Clasificador-arrend' \n\nPero antes de hacerla quiero que hagamos el skill central que se orquestador de documentos, habilidades, referecnias y formatos. \n\nQue tenga un rol, objetivos, contextos, todo lo que tenga un prompt y un skill",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Corrijo un error mío: la carpeta `references/` se creó con un nombre literal y dos archivos quedaron fuera de lugar. Los muevo y sigo con el resto de las referencias.",
+          "Sigo armando el orquestador: me faltan los casos de prueba, la plantilla, los dos scripts, y luego valido y empaqueto.",
+          "Termino la entrega: la habilidad ya está validada y empaquetada, y ahora te la presento.",
+          "Toma en cuenta: validé la estructura y probé el generador de la hoja, pero el orquestador no se ha ejecutado contra un expediente real. Los doce casos de prueba están escritos, no corridos, así que todavía no sé qué tan bien lo sigue Claude en la práctica.\n\n## Qué entregué\n\nLa habilidad se llama `clasificador-arrend`, igual que el plugin, como `digitador-arrend` en el suyo. `SKILL.md` tiene 355 líneas y pasó la validación oficial de skill-creator, y la carpeta quedó empaquetada en clasificador-arrend.skill.\n\nDefine:\n\n- **Rol y objetivo:** asesor técnico y revisor previo, con cuatro objetivos medibles.\n- **Naturaleza del sistema:** sistema experto con extracción asistida; señala, no aprueba. Mantiene separadas las tres capas: lectura, checklist y cruces.\n- **Alcance en tres niveles:**\n  - comprometido: Guatemala, persona jurídica, módulo 3 (escrituras y estructura accionaria);\n  - avance: el resto de los módulos de Guatemala, marcado como \"no comprometido\";\n  - referencia: los otros países, sin checklist activo.\n- **Flujo de diez fases:** incluye compuertas de seguridad antes de leer (resoluciones del Comité, PEP y CPE).\n- **Enrutamiento:** una tabla dice qué referencia leer en cada momento.\n- **Contrato de subhabilidades:** ya fija los esquemas de datos, de modo que cada módulo se pueda extraer como habilidad propia sin tocar el resto.\n\nLas 14 referencias cubren el contexto de negocio, el registro de ids, los módulos y documentos, el módulo de escrituras, el catálogo de datos, unas 70 reglas con id y fuente, los cálculos, el criterio humano, países, formatos, diagnóstico, privacidad y casos de prueba. Los dos scripts son:\n\n- `render_hoja.py`, que genera la hoja de resultado, la lista de correcciones y la trazabilidad con formato fijo.\n- `validar_skill.py`, que revisa la estructura y busca datos sensibles sin repetirlos.\n\n## Decisiones que debes validar\n\n1. **Cada regla tiene una columna de fuente:** checklist, práctica de analistas, precedente o propuesta. Las de propuesta (por ejemplo, nombramiento vencido como BLOQUEA) quedan por confirmar con CGE; no las traté como firmes.\n2. **El módulo de escrituras trae un control** que salió de la analista de Honduras: antes de usar una escritura, se verifica que sea de la razón social de la patente. Evita que se tomen accionistas de otra escritura.\n3. **La numeración de módulos es la mía** (1, 2, 3 de representación, 4 a 7). Sigue sin respuesta si preferías la de Riesgos; se cambia en un solo lugar, `registro_componentes.md`.\n4. **Persona individual y empresa individual** solo tienen la lista de documentos, sin reglas. La lista oficial de nombres de documentos por país y la vigencia de los checklists siguen pendientes con CGE.\n5. **La herramienta web pre alfa no está integrada.** La habilidad son instrucciones para Claude; la herramienta sigue siendo un artefacto aparte.\n\nNo incluí analogías, porque una habilidad es operativa y una analogía puede cambiar cómo se aplica una regla. Si quieres una en una guía de uso para personas, dímelo y la agrego.\n\n¿Armo ahora el plugin con esta habilidad sola, o primero construimos `escrituras` como segunda habilidad para que el plugin nazca con el módulo comprometido ya separado?"
+        ],
+        "resumen_de_acciones": [
+          "Leyó la guía de creación de habilidades (skill-creator) y la estructura de digitador-arrend",
+          "Escribió SKILL.md del orquestador y 14 referencias (registro de componentes, contexto de negocio, módulos y documentos, módulo de escrituras, catálogo de datos, reglas y severidad, cálculos, criterio humano, países y equivalencias, formatos de salida, contrato de subhabilidades, diagnóstico y errores, privacidad y gobernanza, casos de prueba)",
+          "Escribió dos scripts: render_hoja.py (hoja de resultado, correcciones y trazabilidad) y validar_skill.py (estructura y privacidad)",
+          "Corrigió un error propio: las carpetas se habían creado con un nombre literal por una expansión que el intérprete no admite; movió los archivos",
+          "Acortó la descripción a menos de 1024 caracteres, validó con la herramienta oficial y probó el generador con seis situaciones",
+          "Empaquetó clasificador-arrend.skill y presentó SKILL.md y el paquete"
+        ]
+      }
+    },
+    {
+      "turno": 36,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-20T14:40Z",
+      "usuario": [
+        {
+          "texto": "\"Señala; nunca aprueba ni rechaza\" Claro que necesito que rechaces o apruebes. Ese es el principio de un modelo clasificador, decidir si pasa o no. \n\nAquí van a existir varias variables para clasificar: \n\n1. Si pasa\n2. No pasa\n3. Revisión\n\n\nSi un término no pasa, el documento entero no pasa. Hay que señalar cuales no pasan, el nivel de confianza \n\n* alto 100-95 (copy paste)\n* medio 95-85 (imagen legible o texto copiado y pegado con cierta dificultad)\n* bajo 85-50 (imagen borrosa o texto que tuviste que editar y no sabes bien que es)\n* ilegible >= 50 (parcialmente legible, pero no estás seguro si es ese término)\n* faltante. (que no está) \n\nEsto es una regla, no un módulo ni apartado. Como en el apartado adjunto del digitador experto. \n\nImportante: esta será una parte importante del entregable.\n\n\"Señala. No aprueba, no rechaza y no certifica. El estado del expediente es una sugerencia; lo decide la persona de CGE.\" \nDe nuevo. Si lo hace, pero parcialmente, rechaza términos y cálculos mal transcritos o hechos. Básicamente al \"señalar\" está rechazando. \n\n\"lectura correcta del documento (hoy no se mide),\" con la escala que te pasé ya. \nQuiero que enriquezcas esos casos de precisión con situaciones y dificultades que tuvieron los analistas en las revisiones. \n\n\"No proceses resoluciones firmadas del Comité de Riesgos\" por qué dices que no lo puedes hacer? Avisa, pero si procede. \n\n\"La habilidad, sus referencias y los aprendizajes no llevan nombres de clientes ni de personas, documentos de identidad, NIT, números de expediente, rutas de usuario ni cifras reales. La única excepción es el encabezado del reporte de un caso: nombre del caso y fecha de revisión.\" La habilidad si, pero el resultado tienen que ser datos del cliente, tenlo en cuenta.",
+          "adjuntos": [
+            "1795185622538_image.png"
+          ]
+        },
+        {
+          "texto": "Corrige con esto que te envié esas secciones del md",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Voy a corregir la habilidad con tus cinco puntos. Primero busco todos los lugares donde aparece cada idea, para no dejar contradicciones.",
+          "Sigo con la corrección: reescribo el generador de la hoja para que clasifique términos, documentos y expediente, y luego pruebo, valido y empaqueto.",
+          "Toma en cuenta: las Instrucciones del proyecto todavía dicen lo contrario (sección 3: \"la herramienta señala; no aprueba, no rechaza\"; sección 4: \"nunca proceses resoluciones del Comité\"). Si no las actualizas, el conflicto reaparece en cada conversación del proyecto. Anoté la desalineación en el registro y en el mantenimiento de `SKILL.md`.\n\nCorregí los cinco puntos y la habilidad pasó la validación oficial y mis pruebas. La probé con trece situaciones de clasificación, incluidos los casos 14 a 17 que escribí a partir de tus reglas.\n\n## Qué cambió\n\n1. **Clasifica, rechaza y aprueba.** Cada término, documento y expediente queda como Pasa, No pasa o Revisión.\n   - Si un término no pasa, el documento entero no pasa, y la hoja indica cuál término y con qué confianza.\n   - Con una lectura Bajo o Ilegible no se rechaza ni se aprueba: queda en Revisión. Es el caso del nombre invertido del DPI: antes generaba cinco correcciones falsas y ahora queda en Revisión.\n   - La persona de CGE puede cambiar cualquier clasificación y el cambio se registra. Lo conservé porque es el dato que permite medir la precisión.\n2. **Escala de confianza como regla transversal**, en `references/regla_confianza.md`, no como módulo. Cada término se muestra con valor, nivel, fuente y clasificación, como en el apartado del digitador, incluido \"Sin evidencia en el expediente\". Los niveles son Alto (95 a 100), Medio (85 a 94), Bajo (50 a 84), Ilegible y Faltante.\n3. **Casos de precisión de los analistas.** Son 35 situaciones, cada una con su nivel y qué hacer. Algunos ejemplos:\n   - escaneos torcidos o con sombra;\n   - nombres extranjeros leídos letra por letra;\n   - dígitos dudosos en un RUC o en el número de una escritura;\n   - firmas que el visor del PDF no muestra;\n   - informes de buró cortados en \"página 6 de 7\";\n   - escrituras de más de 100 páginas sin numeración;\n   - accionistas devueltos de otra escritura.\n4. **Resoluciones del Comité:** avisa y procesa. Las lee como documento adicional, sin generar hallazgos de checklist. Esa parte es interpretación mía de \"procede\".\n5. **Privacidad en dos niveles.** La habilidad, las referencias y los aprendizajes siguen sin datos de clientes. Los resultados del caso (hoja, correcciones, extracciones y trazabilidad) llevan los datos del cliente. La ficha de entrenamiento va sin datos, porque alimenta los aprendizajes.\n\nEl generador `render_hoja.py` ahora calcula toda la clasificación y rechaza una escala mal usada (puntaje fuera de rango o un Bajo sin motivo). El validador detecta frases de la redacción anterior para que no vuelvan a colarse.\n\n## Tres cosas que interpreté\n\n- **Ilegible.** Escribiste \"ilegible >= 50\", que se solapa con Bajo (50 a 84). Lo traté como \"menos de 50\".\n- **Expediente.** Derivé su clasificación igual que la del documento: si algún documento no pasa, el expediente no pasa. Lo marqué como propuesta.\n- **PEP y CPE.** Siguen deteniendo el caso, porque solo mencionaste las resoluciones.\n- **Puntaje.** Los rangos son criterios de calificación, no un acierto medido. La hoja lo dice y no declara precisión hasta tener casos medidos.\n\n¿Quieres que PEP y CPE también avisen y procedan, o se quedan deteniendo el caso?"
+        ],
+        "resumen_de_acciones": [
+          "Buscó en toda la habilidad los textos que contradecían lo pedido",
+          "Escribió references/regla_confianza.md: escala de confianza de cinco niveles, clasificación de término, documento y expediente, 35 casos de precisión de los analistas, medición y ejemplo",
+          "Reescribió secciones de SKILL.md y actualizó registro de componentes, reglas y severidad, formatos de salida, contrato de subhabilidades, privacidad (dos niveles; resoluciones del Comité se procesan con aviso), criterio humano, diagnóstico, casos de prueba, plantilla y ejemplo",
+          "Reescribió render_hoja.py para clasificar términos, documentos y expediente y amplió validar_skill.py contra frases obsoletas",
+          "Probó el generador con trece situaciones y validó con la herramienta oficial",
+          "Reempaquetó clasificador-arrend.skill y presentó SKILL.md, regla_confianza.md y el paquete"
+        ]
+      }
+    },
+    {
+      "turno": 37,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": "2026-11-20T17:48Z",
+      "usuario": [
+        {
+          "texto": "Ayudame a preparar toda la data para colocarla en github y trabajar en Claude Code este proyecto",
+          "adjuntos": [
+            "1795196897651_image.png"
+          ]
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Verifico el formato real de plugins y marketplaces dentro del paquete de Claude Code, para no darte una estructura inventada. Luego armo el repositorio.",
+          "Verifiqué que Claude Code corre aquí y que sus comandos de plugin existen. Ahora armo la carpeta del repositorio y extraigo los checklists a texto.",
+          "Falta la parte de seguridad y los pasos de subida. Escribo el README, el validador de privacidad del repositorio, el gancho de git y la verificación automática; luego valido todo con Claude Code.",
+          "Todo está validado y empaquetado. Te presento el zip y los dos archivos principales.",
+          "Toma en cuenta: un repositorio privado no vuelve seguros los datos de clientes. Dejé el repositorio preparado para que no suban, pero los expedientes reales deben quedar fuera de la carpeta del proyecto, porque Claude Code envía al proveedor de IA lo que lee.\n\n## Qué preparé\n\nEl zip proyecto-CGE.zip tiene 56 archivos, listos para subir:\n\n- **`CLAUDE.md`:** las Instrucciones del proyecto actualizadas (clasifica, escala de confianza, privacidad en dos niveles, las resoluciones del Comité se procesan con aviso) más las reglas de trabajo del repositorio. Claude Code lo lee solo.\n- **`plugins/clasificador-arrend/`:** el plugin con la habilidad central. El repositorio también funciona como marketplace, así que se instala con dos comandos.\n- **`docs/`:** reportes por país, reporte técnico, plan, bodega de revisiones, y tres archivos nuevos: hoja de ruta, pendientes y consultas para CGE, e instrucciones para pegar en claude.ai.\n- **`herramienta/`:** el prototipo web.\n- **`fuentes/checklists/`:** los Excel de checklists extraídos a texto.\n- **`.gitignore`, `scripts/validar_repo.py`, gancho de git y verificación automática en GitHub:** bloquean datos de clientes antes del commit.\n- **`casos/`:** carpeta local ignorada por git, para expedientes y resultados.\n\n## Qué verifiqué\n\nDescargué Claude Code (versión 2.1.329) y lo ejecuté aquí.\n\n- **[Seguro]** El marketplace, el plugin y la habilidad pasaron `claude plugin validate`.\n- **[Seguro]** El plugin carga con una habilidad. Cuesta unos 250 tokens fijos por sesión y unos 5.3 mil cuando se invoca.\n- **[Seguro]** Node.js 22 o superior es requisito para instalarlo con npm, y en Windows hace falta Git para Windows o PowerShell.\n- El validador de privacidad pasó con los 56 archivos. También lo probé con una lista de nombres de prueba, sin hallazgos.\n\n## Qué sigue para ti\n\n1. En tu pantalla estás creando un archivo a la vez: cancela esa edición.\n2. Sigue la **Opción A del `README.md`**: clonar, copiar con `robocopy`, activar el gancho y hacer el push. La carga por web puede omitir las carpetas con punto, como `.claude-plugin`.\n3. Pega `docs/instrucciones-proyecto-claude-ai.md` en las Instrucciones del proyecto de claude.ai. Las vigentes todavía dicen que la herramienta solo señala.\n4. Crea tu lista local `scripts/nombres_prohibidos.txt` a partir del ejemplo. El repositorio no lleva nombres a propósito, así que sin esa lista el validador no puede revisarlos.\n\n## Lo que no pude probar\n\n- **[Suposición]** El `git push` y `/plugin marketplace add` desde tu cuenta. Dependen de tus credenciales de GitHub para el repositorio privado.\n- La verificación automática de GitHub no corrió.\n- Los 18 casos de prueba están escritos, no ejecutados contra el modelo. Es el primer encargo que dejé sugerido para Claude Code.\n\n## Qué dejé fuera y qué cambié\n\n- **Fuera del repositorio:** videos, transcripciones, capturas, expedientes y los Excel originales (están extraídos a texto). Todo eso traía datos de clientes.\n- **Cambié un dato en la copia del prototipo:** el número de documento del expediente de prueba, por uno ficticio. El artefacto original no cambia.\n- **Cronograma:** reemplacé el anterior por una hoja de ruta sin nombres de personas.\n- **Autorización:** la reunión del prototipo dejó pendiente la autorización de gerencia general para usar Claude Code.\n\n¿Quieres que prepare esa lista local de nombres con los que aparecieron en las transcripciones? La dejaría fuera del zip, para que la guardes solo en tu equipo."
+        ],
+        "resumen_de_acciones": [
+          "Consultó los datos oficiales de Claude Code (paquete de npm: requiere Node 22 o superior)",
+          "Descargó y ejecutó Claude Code en el entorno para verificar el formato real de plugins y marketplaces",
+          "Escaneó los archivos candidatos en busca de nombres y números largos (solo archivo y línea)",
+          "Armó la carpeta proyecto-CGE: plugin, marketplace, CLAUDE.md, README, .gitignore, docs, checklists extraídos a texto, prototipo web con el número de demostración sustituido, validador de privacidad, gancho de git y verificación automática",
+          "Validó con claude plugin validate y revisó el costo en contexto del plugin",
+          "Empaquetó proyecto-CGE.zip y presentó el zip, el README y CLAUDE.md"
+        ]
+      }
+    },
+    {
+      "turno": 38,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "[Comentario de revisión sobre README.md]\nTexto resaltado: \"Opción A. Línea de comandos (recomendada)\"\n\nComentario: El Claude Code y Github en la nube, todo se va trabajar ahí",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Entendido: todo se trabaja en la nube, sin línea de comandos local. Eso cambia tres cosas: cómo se sube el contenido, cómo carga la habilidad en una sesión en la nube y cómo se vigila la privacidad. Reescribo el README y ajusto el repositorio.",
+          "Toma en cuenta: al trabajar todo en la nube, mi consejo anterior de guardar los expedientes fuera del repositorio ya no aplica. No pude verificar cómo entran los expedientes a una sesión en la nube ni qué política de retención tienen, así que quedó como pregunta para Sistemas y, mientras tanto, solo casos ficticios.\n\n## Qué cambié\n\n1. **Sin línea de comandos.** Quité el gancho de git y los pasos de `robocopy`. El README ahora sube el contenido desde el navegador (Add file > Upload files) y explica qué hacer si falta alguna carpeta con punto.\n2. **La habilidad ahora carga en la sesión.** Claude Code solo carga habilidades de `.claude/skills/`. Dejé el plugin como fuente única y generé un espejo en esa carpeta con `scripts/sincronizar_habilidad.py`. La verificación automática falla si el espejo se desactualiza; lo probé alterando una referencia. Si la carpeta no sube desde el navegador, la primera sesión la regenera con ese script.\n3. **Los nombres prohibidos pasan a un secreto de GitHub** (`NOMBRES_PROHIBIDOS`). Como no hay una carpeta local donde guardarlos, la verificación automática los lee del secreto en cada push. Los nombres nunca quedan en el repositorio.\n4. **`main` protegido.** El README te guía para exigir solicitudes de cambios y que pase \"Validar estructura y privacidad\" antes de integrar. Es lo que reemplaza al gancho local.\n5. **`CLAUDE.md` y `casos/README.md`** reescritos para el flujo en la nube: ramas, solicitudes de cambios, sincronizar el espejo y no subir datos de clientes.\n\n## Qué verifiqué\n\n- **[Seguro]** El marketplace, el plugin y el espejo `.claude/skills` pasaron `claude plugin validate`.\n- **[Seguro]** El validador del repositorio pasa con los 76 archivos, y la guardia contra copias desactualizadas detecta cuando el espejo cambia.\n\n## Qué no pude verificar\n\n- **[Suposición]** Que una sesión de Claude Code en la nube cargue la habilidad desde `.claude/skills/`. El primer encargo sugerido en el README pide que Claude Code liste las habilidades que tiene cargadas; es la prueba.\n- **[Suposición]** Que la aplicación de Claude para GitHub se pueda instalar en la organización sin un administrador.\n- La verificación automática de GitHub y la carga por web del zip no se probaron.\n- Los 18 casos de prueba siguen sin ejecutarse contra el modelo.\n\nLo único que depende de ti ahora: crear el secreto, proteger `main` y confirmar con la gerencia general la autorización de Claude Code.\n\n¿Quieres que prepare la lista de nombres para pegarla en el secreto? La armaría con los que aparecieron en las transcripciones y te la entregaría como texto en el chat, no como archivo del zip."
+        ],
+        "resumen_de_acciones": [
+          "Verificó en Claude Code las claves de configuración para marketplaces y plugins por proyecto",
+          "Quitó el gancho de git; creó scripts/sincronizar_habilidad.py y el espejo .claude/skills/clasificador-arrend",
+          "Movió la lista de nombres prohibidos a un secreto de GitHub y actualizó la verificación automática",
+          "Reescribió README.md, CLAUDE.md y casos/README.md para el flujo en la nube",
+          "Validó con claude plugin validate y probó la guardia contra copias desactualizadas",
+          "Reempaquetó proyecto-CGE.zip (76 archivos) y presentó el zip, el README y CLAUDE.md"
+        ]
+      }
+    },
+    {
+      "turno": 39,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Dame un reporte detallado de actividades en md sobre reuniones, duraciones, fases y todo lo que se necesite para un Gantt en md porfa",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Voy a armar el reporte con datos verificados: primero mido todas las grabaciones y releo el cronograma original para alinear las fases.",
+          "Reúno los datos verificados y genero el reporte con los cálculos hechos por código, para que las duraciones y los totales cuadren.",
+          "Estoy en la revisión final del reporte: corrijo un redondeo de horas de fin y reviso cómo quedó la cuadrícula semanal.",
+          "Toma en cuenta: el cronograma original ya no describe el proyecto. Cuenta 8 reuniones y marca la 5 como corte (38 %), pero los archivos muestran 11 sesiones y una revisión sin recibir, y las revisiones 1 a 5 no tienen fecha real de reunión.\n\n## Qué contiene reporte-actividades-y-gantt.md\n\n1. **Resumen y calendario de sesiones.** Cada sesión con fecha, inicio, fin, duración, videos, voces y estado de los archivos, más el tiempo del caso por revisión.\n2. **Fases.** Las del cronograma original (4) y las propuestas desde el 17 de noviembre (F0 a F6).\n3. **Registro de 31 actividades**, que es la fuente de datos del Gantt. Cada una trae fase, tipo, inicio, fin, días, estado, certeza, dependencias, responsable por rol y entregable.\n4. **Gantt en dos formatos:** un diagrama Mermaid y una cuadrícula semanal en texto, para si el visor no dibuja.\n5. **Hitos, comparación con el cronograma original, ruta crítica, riesgos, brechas de datos y cómo actualizarlo.**\n\n## Los números principales\n\n- **[Seguro]** Del 4 al 19 de noviembre hay 11 sesiones con archivos: 16 h 55 min en total y 15 h 14 min solo de revisiones. Los totales y las horas de fin los calculé por código a partir de los metadatos de los archivos.\n- **[Seguro]** 15 de las 31 actividades están hechas, 2 en curso y 14 pendientes.\n- **[Probable]** Las revisiones 1 a 5 tienen fecha deducida de la fecha de subida y de la numeración: 1 y 2 antes del 12 de noviembre, y 3, 4 y 5 entre el 12 y el 18.\n- **[Suposición]** Todo lo futuro es propuesta: parte del lunes 23 de noviembre como semana 1 y lleva la certeza \"Propuesta\".\n\n## Lo que no se ve en el cronograma original\n\n- **La revisión 7 no existe en los archivos.**\n- **Faltan videos de las revisiones 3, 4 y 5.** Los videos cubren el 89 % de la tres y el 67 % de la cuatro; en la cinco, el video 2 no se entregó y el 3 está dañado.\n- **Capacidad.** Con un solo recurso técnico, las actividades A24 y A25 no pueden correr en paralelo como las dibujé. Lo marqué como riesgo, con un posible desplazamiento de una semana.\n\n## Qué verifiqué\n\nEl diagrama Mermaid pasó el analizador oficial, y comprobé que rechaza un diagrama con la palabra clave mal escrita. **No vi el diagrama dibujado**, así que revísalo en GitHub o en tu visor. Busqué nombres de personas y números largos en el reporte y no encontré hallazgos. Los responsables van por rol y no incluí analogías.\n\n¿Confirmas las fechas reales de las revisiones 1 a 5 y si existe la revisión 7? Con eso paso las fechas probables a reales y corrijo la línea base del avance."
+        ],
+        "resumen_de_acciones": [
+          "Midió la duración y la fecha de las 35 grabaciones y las 23 transcripciones",
+          "Releyó el cronograma original (artefacto) para extraer fases, reuniones y tareas",
+          "Generó con código el reporte de actividades y Gantt en Markdown: calendario de sesiones, fases, registro de 31 actividades, diagrama Mermaid, cuadrícula semanal, hitos, comparación con el cronograma original, ruta crítica, riesgos y brechas de datos",
+          "Validó el diagrama con el analizador de Mermaid, incluida una prueba con un diagrama roto",
+          "Buscó nombres y números largos en el reporte (sin hallazgos)",
+          "Presentó reporte-actividades-y-gantt.md"
+        ]
+      }
+    },
+    {
+      "turno": 40,
+      "fuente": "contexto_actual",
+      "fecha_utc_aproximada": null,
+      "usuario": [
+        {
+          "texto": "Ahora también dame el historial completa de la conversación en formato Json porfa.",
+          "adjuntos": []
+        }
+      ],
+      "asistente": {
+        "mensajes_visibles": [
+          "Reviso primero qué fuentes de historial existen: hay una transcripción guardada de la parte anterior a la compactación, y lo posterior solo vive en mi contexto actual.",
+          "Hay dos fuentes: la transcripción guardada cubre del 6 al 17 de noviembre (15 turnos) y el resto vive en mi contexto actual. Genero la primera parte por código y reconstruyo la segunda."
+        ],
+        "resumen_de_acciones": [
+          "Listó las transcripciones guardadas por el sistema y analizó su formato",
+          "Extrajo por código los 15 turnos anteriores a la compactación (sin razonamiento interno, sin bloques del sistema, sin resultados de herramientas)",
+          "Reconstruyó del contexto actual los turnos posteriores a la compactación",
+          "Generó este archivo JSON y lo validó"
+        ],
+        "nota": "La respuesta final de este turno no se incluye porque se escribe después de generar el archivo."
+      }
+    }
+  ]
+}
